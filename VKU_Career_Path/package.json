@@ -1,0 +1,25 @@
+{
+  "name": "vku_career",
+  "version": "1.0.0",
+  "description": "top 10",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/server.js"
+  },
+  "keywords": [
+    "bwd",
+    "vku",
+    "career"
+  ],
+  "author": "Lam Anh Quang Dinh",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "16.5.0",
+    "ejs": "3.1.10",
+    "express": "5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
