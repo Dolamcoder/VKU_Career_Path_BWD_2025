@@ -468,6 +468,7 @@ header {
 }
 
 /* News */
+/* News */
 .news {
   overflow-x: hidden;
 }
@@ -485,14 +486,37 @@ header {
   overflow: hidden;
 }
 
+.news-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
 .news-card img {
   height: 200px;
   object-fit: cover;
+  /* object-position: bottom right; */
+  width: 100%;
+  margin-bottom: 15px;
 }
 
 .news-card .card-title {
   font-weight: 600;
   font-size: 1.2rem;
+}
+
+.news .btn-primary {
+  background-color: #007bff;
+  border: none;
+  font-weight: bold;
+  padding: 6px 16px;
+  border-radius: 20px;
+  transition: background 0.3s ease;
+}
+
+.news .btn-primary:hover {
+  background-color: #0056b3;
 }
 
 button {

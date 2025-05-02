@@ -1,11 +1,615 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>VKU Career Path - Tư vấn ngành</title>
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/advise.css">
 </head>
+
 <body>
-    hello world
+    <!-- Header -->
+    <header id="mainHeader">
+        <div class="header_logo">
+            <a href="#"><img src="/img/logon-removebg-preview.png" alt="VKU Logo"><span>VKU Career Path</span></a>
+        </div>
+        <div class="header_bar">
+            <button id="menuMobile" class="menu_mobile_button"><i class="fa fa-bars"></i></button>
+            <div class="menu_mobile" id="menu_mobile">
+                <div class="menu_mobile_header">
+                    <div class="menu_mobile_logo">
+                        <a href="#"><img src="/img/logon-removebg-preview.png" alt="VKU Logo"><span>VKU Career
+                                Path</span></a>
+                    </div>
+                    <button id="closeMenuMobile" class="menu_mobile_close"><i class="fa fa-times"></i></button>
+                </div>
+                <div class="menu_mobile_item">
+                    <li class="active"><a href="#">Trang chủ</a></li>
+                    <li><a href="#">Tư vấn ngành</a></li>
+                    <li><a href="#">Mô tả ngành</a></li>
+                    <li><a href="#">Lộ trình học tập</a></li>
+                    <li><a href="#">Cộng đồng</a></li>
+                    <li><a href="#">Đăng nhập</a></li>
+                </div>
+            </div>
+        </div>
+        <div class="header_menu">
+            <ul>
+                <li class="active"><a href="#">Trang chủ</a></li>
+                <li><a href="/advise">Tư vấn ngành</a></li>
+                <li><a href="#">Mô tả ngành</a></li>
+                <li><a href="#">Lộ trình học tập</a></li>
+                <li><a href="#">Cộng đồng</a></li>
+            </ul>
+        </div>
+        <div class="logIn_signUp">
+            <button><a href="#"><i class="fa fa-user"></i><span> Đăng nhập</span></a></button>
+        </div>
+        <div class="avartar">
+            <img src="" alt="Avatar">
+        </div>
+    </header>
+    <header id="scroll">
+        <div class="header_logo">
+            <a href="#"><img src="/img/logon-removebg-preview.png" alt="VKU Logo"><span>VKU Career Path</span></a>
+        </div>
+        <div class="header_bar">
+            <button id="menuMobileScroll" class="menu_mobile_button"><i class="fa fa-bars"></i></button>
+            <div class="menu_mobile" id="menu_mobile_scroll">
+                <div class="menu_mobile_header">
+                    <div class="menu_mobile_logo">
+                        <a href="#"><img src="/img/logon-removebg-preview.png" alt="VKU Logo"><span>VKU Career
+                                Path</span></a>
+                    </div>
+                    <button id="closeMenuMobileScroll" class="menu_mobile_close"><i class="fa fa-times"></i></button>
+                </div>
+                <div class="menu_mobile_item">
+                    <li class="active"><a href="#">Trang chủ</a></li>
+                    <li><a href="#">Tư vấn ngành</a></li>
+                    <li><a href="#">Mô tả ngành</a></li>
+                    <li><a href="#">Lộ trình học tập</a></li>
+                    <li><a href="#">Cộng đồng</a></li>
+                    <li><a href="">Đăng Nhập</a></li>
+                </div>
+            </div>
+        </div>
+        <div class="header_menu">
+            <ul>
+                <li class="active"><a href="#">Trang chủ</a></li>
+                <li><a href="#">Tư vấn ngành</a></li>
+                <li><a href="#">Mô tả ngành</a></li>
+                <li><a href="#">Lộ trình học tập</a></li>
+                <li><a href="#">Cộng đồng</a></li>
+            </ul>
+        </div>
+        <div class="logIn_signUp">
+            <button><a href="#"><i class="fa fa-user"></i><span> Đăng nhập</span></a></button>
+        </div>
+        <div class="avartar">
+            <img src="" alt="Avatar">
+        </div>
+    </header>
+    s
+    <!-- hiển thị bước -->
+    <div class="stepper-container container mt-5">
+        <div class="stepper d-flex justify-content-between mb-4">
+            <div class="step" onclick="goToStep(1)">1<br><span>Giới thiệu</span></div>
+            <div class="step" onclick="goToStep(2)">2<br><span>Trắc nghiệm</span></div>
+            <div class="step" onclick="goToStep(3)">3<br><span>Tư vấn chuyên gia</span></div>
+            <div class="step" onclick="goToStep(4)">4<br><span>So sánh ngành</span></div>
+            <div class="step" onclick="goToStep(5)">5<br><span>Kết quả</span></div>
+            <div class="step" onclick="goToStep(6)">6<br><span>Đánh giá</span></div>
+        </div>
+    </div>
+
+    <!-- nội dung b1 -->
+    <div class="container">
+        <div id="step-1" class="step-content active">
+            <div class="card p-4 shadow">
+                <h2 class="text-primary font-weight-bold mb-3">GIỚI THIỆU TRẮC NGHIỆM</h2>
+                <p><strong>Bài trắc nghiệm này sẽ giúp bạn khám phá ngành học phù hợp dựa trên mô hình MBTI, Holland
+                        Code và các khung tâm lý học nghề nghiệp.</strong></p>
+                <p>Hệ thống AI của chúng tôi sẽ phân tích câu trả lời của bạn và đề xuất 3 ngành học phù hợp nhất với
+                    tính cách, sở thích và năng lực của bạn tại Đại học VKU.</p>
+                <h5 class="mt-4 text-primary font-weight-bold">Hướng dẫn:</h5>
+                <p><strong>Trước khi thực hiện:</strong></p>
+                <ul>
+                    <li>Chọn nơi yên tĩnh để tập trung</li>
+                    <li>Dành khoảng 10-15 phút để hoàn thành</li>
+                </ul>
+                <p><strong>Khi thực hiện:</strong></p>
+                <p>Hãy trả lời trung thực theo cảm nhận của bạn:</p>
+                <ol>
+                    <li>Kéo thanh trượt để thể hiện mức độ phù hợp</li>
+                    <li>Không có câu trả lời đúng hay sai</li>
+                    <li>Chọn phương án phản ánh đúng nhất con người bạn</li>
+                </ol>
+                <p><strong>Lưu ý:</strong> Kết quả chỉ mang tính chất tham khảo, bạn nên kết hợp với tư vấn từ chuyên
+                    gia để có quyết định chính xác nhất về ngành học.</p>
+            </div>
+        </div>
+
+        <!-- bước 2 -->
+        <div id="step-2" class="step-content">
+            <div class="test-container">
+                <!-- giới thiệu b2 -->
+                <div id="test-intro" class="test-intro">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-robot text-blue-600 text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Trắc Nghiệm Định Hướng Ngành Học</h3>
+                        <p class="text-gray-600 mb-6">Bài trắc nghiệm này sẽ giúp bạn khám phá ngành học phù hợp dựa
+                            trên mô hình MBTI, Holland Code và các khung tâm lý học nghề nghiệp.</p>
+                        <ul class="text-left max-w-md mx-auto mb-8 text-gray-700">
+                            <li class="flex items-center mb-2"><i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                10 câu hỏi đơn giản</li>
+                            <li class="flex items-center mb-2"><i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Phân tích bằng AI chính xác</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Kết
+                                quả cá nhân hóa</li>
+                        </ul>
+                        <button id="start-test-btn"
+                            class="bg-blue-600 text-white px-8 py-3 rounded-md font-medium hover:bg-blue-700 transition">Bắt
+                            Đầu Ngay</button>
+                    </div>
+                </div>
+
+                <!-- câu hỏi -->
+                <div id="test-questions" class="test-questions hidden">
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="text-sm text-gray-500">Câu hỏi <span id="current-question">1</span>/10</div>
+                        <div class="w-full max-w-xs">
+                            <div class="progress-bar">
+                                <div id="progress-fill" class="progress-fill" style="width: 10%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="question-container">
+                        <!-- hiện thị câu hỏi = js ở đây á hỉ chớ k phải k có code mô -->
+                    </div>
+
+                    <div class="flex justify-between mt-8">
+                        <button id="prev-btn"
+                            class="text-blue-600 hover:text-blue-800 font-medium flex items-center opacity-0">
+                            <i class="fas fa-arrow-left mr-2"></i> Câu trước
+                        </button>
+                        <button id="next-btn"
+                            class="bg-blue-600 text-white px-6 py-2 rounded-md font-medium hover:bg-blue-700 transition">
+                            Tiếp theo <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- kq bài test -->
+                <div id="test-results" class="test-results hidden">
+                    <div class="text-center mb-8">
+                        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-check-circle text-green-600 text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Kết Quả Trắc Nghiệm Của Bạn</h3>
+                        <p class="text-gray-600">Dựa trên câu trả lời của bạn, đây là 3 ngành học phù hợp nhất tại VKU
+                        </p>
+                    </div>
+
+                    <div id="results-container" class="grid md:grid-cols-3 gap-6 mb-8">
+                        <!-- hiển thị kq = js ở đấy -->
+                    </div>
+
+                    <div class="text-center">
+                        <button id="retake-btn" class="text-blue-600 hover:text-blue-800 font-medium mr-4">
+                            <i class="fas fa-redo mr-2"></i> Làm lại trắc nghiệm
+                        </button>
+                        <button id="save-results-btn"
+                            class="bg-blue-600 text-white px-6 py-2 rounded-md font-medium hover:bg-blue-700 transition">
+                            <i class="fas fa-save mr-2"></i> Lưu kết quả
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- tư vấn b3 -->
+        <div id="step-3" class="step-content">
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="consultant-card">
+                    <div class="flex items-center mb-6">
+                        <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-calendar-alt text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Đặt Lịch Tư Vấn</h3>
+                    </div>
+
+                    <form id="consultation-form">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Họ và tên</label>
+                            <input type="text" id="name"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" id="email"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Số điện thoại</label>
+                            <input type="tel" id="phone"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="consult-type" class="block text-gray-700 font-medium mb-2">Hình thức tư
+                                vấn</label>
+                            <select id="consult-type"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="online">Trực tuyến (Zoom/Google Meet)</option>
+                                <option value="chat">Chat trực tuyến</option>
+                                <option value="offline">Trực tiếp tại VKU</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label for="date" class="block text-gray-700 font-medium mb-2">Ngày hẹn</label>
+                            <input type="date" id="date"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="time" class="block text-gray-700 font-medium mb-2">Giờ hẹn</label>
+                            <select id="time"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="08:00">8:00 - 9:00</option>
+                                <option value="09:00">9:00 - 10:00</option>
+                                <option value="10:00">10:00 - 11:00</option>
+                                <option value="13:00">13:00 - 14:00</option>
+                                <option value="14:00">14:00 - 15:00</option>
+                                <option value="15:00">15:00 - 16:00</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label for="notes" class="block text-gray-700 font-medium mb-2">Ghi chú (nếu có)</label>
+                            <textarea id="notes" rows="3"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-blue-600 text-white py-3 rounded-md font-medium hover:bg-blue-700 transition">Đặt
+                            Lịch Ngay</button>
+                    </form>
+                </div>
+
+                <div class="consultant-card">
+                    <div class="flex items-center mb-6">
+                        <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-comments text-purple-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Chat với Chuyên Gia</h3>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg p-4 mb-6">
+                        <div class="flex items-start mb-4">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-robot text-blue-600"></i>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg shadow-sm max-w-xs">
+                                <p class="text-gray-800">Xin chào! Tôi là trợ lý ảo của VKU. Tôi có thể giúp gì cho bạn?
+                                </p>
+                            </div>
+                        </div>
+
+                        <div id="chat-messages" class="h-64 overflow-y-auto mb-4">
+                            <!-- Chat message hiển thị ở đây = js (ch xong)-->
+                        </div>
+
+                        <div class="flex">
+                            <input type="text" id="chat-input" placeholder="Nhập câu hỏi của bạn..."
+                                class="flex-1 px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <button id="send-chat-btn"
+                                class="bg-blue-600 text-white px-4 py-2 rounded-r-md hover:bg-blue-700 transition">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="border-t pt-6">
+                        <h4 class="font-bold text-gray-800 mb-4">Lịch Tư Vấn Định Kỳ</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-start p-3 bg-blue-50 rounded-lg">
+                                <div class="bg-blue-100 text-blue-800 px-3 py-1 rounded-md mr-3 text-sm font-medium">Thứ
+                                    2</div>
+                                <div>
+                                    <p class="font-medium text-gray-800">Tư vấn ngành Công nghệ Thông tin</p>
+                                    <p class="text-sm text-gray-600">14:00 - 16:00 | Phòng 301</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start p-3 bg-purple-50 rounded-lg">
+                                <div
+                                    class="bg-purple-100 text-purple-800 px-3 py-1 rounded-md mr-3 text-sm font-medium">
+                                    Thứ 4</div>
+                                <div>
+                                    <p class="font-medium text-gray-800">Tư vấn ngành Kinh tế - Quản trị</p>
+                                    <p class="text-sm text-gray-600">9:00 - 11:00 | Phòng 205</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start p-3 bg-green-50 rounded-lg">
+                                <div class="bg-green-100 text-green-800 px-3 py-1 rounded-md mr-3 text-sm font-medium">
+                                    Thứ 6</div>
+                                <div>
+                                    <p class="font-medium text-gray-800">Tư vấn ngành Ngôn ngữ - Truyền thông</p>
+                                    <p class="text-sm text-gray-600">13:00 - 15:00 | Phòng 102</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- so sánh ngành b4 (ch xong) -->
+        <div id="step-4" class="step-content">
+            <div class="max-w-4xl mx-auto bg-gray-50 p-6 rounded-xl shadow-sm mb-8">
+                <div class="grid md:grid-cols-2 gap-4 mb-6">
+                    <div>
+                        <label for="program1" class="block text-gray-700 font-medium mb-2">Ngành thứ nhất</label>
+                        <select id="program1"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="">-- Chọn ngành --</option>
+                            <option value="cntt">Công nghệ Thông tin</option>
+                            <option value="kt">Kế toán</option>
+                            <option value="qtkd">Quản trị Kinh doanh</option>
+                            <option value="mkt">Marketing</option>
+                            <option value="nn">Ngôn ngữ Anh</option>
+                            <option value="truyen-thong">Truyền thông Đa phương tiện</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="program2" class="block text-gray-700 font-medium mb-2">Ngành thứ hai</label>
+                        <select id="program2"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="">-- Chọn ngành --</option>
+                            <option value="cntt">Công nghệ Thông tin</option>
+                            <option value="kt">Kế toán</option>
+                            <option value="qtkd">Quản trị Kinh doanh</option>
+                            <option value="mkt">Marketing</option>
+                            <option value="nn">Ngôn ngữ Anh</option>
+                            <option value="truyen-thong">Truyền thông Đa phương tiện</option>
+                        </select>
+                    </div>
+                </div>
+                <button id="compare-btn"
+                    class="bg-blue-600 text-white px-6 py-2 rounded-md font-medium hover:bg-blue-700 transition">So Sánh
+                    Ngay</button>
+            </div>
+
+            <div id="comparison-result" class="hidden max-w-4xl mx-auto bg-white p-6 rounded-xl shadow-sm fade-in">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl font-bold text-gray-800">Kết Quả So Sánh</h3>
+                    <div class="flex space-x-2">
+                        <button class="text-blue-600 hover:text-blue-800 flex items-center">
+                            <i class="fas fa-download mr-1"></i> Tải PDF
+                        </button>
+                        <button class="text-blue-600 hover:text-blue-800 flex items-center">
+                            <i class="fas fa-share-alt mr-1"></i> Chia sẻ
+                        </button>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="comparison-table w-full rounded-lg overflow-hidden">
+                        <thead>
+                            <tr>
+                                <th class="text-left">Tiêu chí</th>
+                                <th id="program1-title" class="text-center w-1/3">Ngành 1</th>
+                                <th id="program2-title" class="text-center w-1/3">Ngành 2</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-medium">Cơ hội việc làm</td>
+                                <td id="program1-jobs" class="text-center"></td>
+                                <td id="program2-jobs" class="text-center"></td>
+                            </tr>
+                            <tr>
+                                <td class="font-medium">Mức lương khởi điểm</td>
+                                <td id="program1-salary" class="text-center"></td>
+                                <td id="program2-salary" class="text-center"></td>
+                            </tr>
+                            <tr>
+                                <td class="font-medium">Kỹ năng yêu cầu</td>
+                                <td id="program1-skills" class="text-center"></td>
+                                <td id="program2-skills" class="text-center"></td>
+                            </tr>
+                            <tr>
+                                <td class="font-medium">Thời gian đào tạo</td>
+                                <td id="program1-duration" class="text-center"></td>
+                                <td id="program2-duration" class="text-center"></td>
+                            </tr>
+                            <tr>
+                                <td class="font-medium">Thế mạnh tại VKU</td>
+                                <td id="program1-strengths" class="text-center"></td>
+                                <td id="program2-strengths" class="text-center"></td>
+                            </tr>
+                            <tr>
+                                <td class="font-medium">Đánh giá từ cựu sinh viên</td>
+                                <td id="program1-reviews" class="text-center"></td>
+                                <td id="program2-reviews" class="text-center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="ai-recommendation" class="mt-8 p-4 bg-blue-50 rounded-lg hidden">
+                    <div class="flex items-start">
+                        <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                            <i class="fas fa-robot text-blue-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-2">Đề xuất từ AI</h4>
+                            <p id="ai-recommendation-text" class="text-gray-700"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- kq b5 -->
+        <div id="step-5" class="step-content">
+            <div class="card p-4 shadow">
+                <h2 class="text-primary font-weight-bold mb-4">Kết Quả Định Hướng</h2>
+                <div id="final-results-container" class="grid md:grid-cols-3 gap-6">
+                    <!-- kq lấy từ b2 hiển thị ở đây = js -->
+                </div>
+                <div class="mt-6">
+                    <h4 class="font-weight-bold text-primary mb-3">Lời Khuyên Từ Chuyên Gia</h4>
+                    <p>Dựa trên kết quả trắc nghiệm và so sánh ngành học, chúng tôi đề xuất bạn nên:</p>
+                    <ul class="mt-3">
+                        <li>Tham gia các buổi tư vấn chuyên sâu về ngành học</li>
+                        <li>Trải nghiệm thực tế tại các doanh nghiệp đối tác của VKU</li>
+                        <li>Tham khảo ý kiến từ cựu sinh viên các ngành liên quan</li>
+                    </ul>
+                </div>
+                <div class="mt-6 text-center">
+                    <button
+                        class="bg-blue-600 text-white px-6 py-2 rounded-md font-medium hover:bg-blue-700 transition mr-3">
+                        <i class="fas fa-download mr-2"></i> Tải Báo Cáo Đầy Đủ
+                    </button>
+                    <button
+                        class="bg-green-600 text-white px-6 py-2 rounded-md font-medium hover:bg-green-700 transition">
+                        <i class="fas fa-calendar-check mr-2"></i> Đặt Lịch Tư Vấn
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- đánh giá b6 -->
+        <div id="step-6" class="step-content">
+            <div class="card p-4 shadow">
+                <h2 class="text-primary font-weight-bold mb-4">Đánh Giá Trải Nghiệm</h2>
+                <p>Chúng tôi rất mong nhận được phản hồi của bạn để cải thiện chất lượng dịch vụ.</p>
+
+                <div class="mt-5">
+                    <h5 class="font-weight-bold">Bạn đánh giá trải nghiệm này như thế nào?</h5>
+                    <div class="rating-stars mt-3 flex justify-center">
+                        <i class="far fa-star text-yellow-500 text-2xl mx-1 cursor-pointer" data-rating="1"></i>
+                        <i class="far fa-star text-yellow-500 text-2xl mx-1 cursor-pointer" data-rating="2"></i>
+                        <i class="far fa-star text-yellow-500 text-2xl mx-1 cursor-pointer" data-rating="3"></i>
+                        <i class="far fa-star text-yellow-500 text-2xl mx-1 cursor-pointer" data-rating="4"></i>
+                        <i class="far fa-star text-yellow-500 text-2xl mx-1 cursor-pointer" data-rating="5"></i>
+                    </div>
+                </div>
+
+                <div class="mt-5">
+                    <h5 class="font-weight-bold">Ý kiến đóng góp của bạn</h5>
+                    <textarea id="feedback-text" rows="4"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Hãy chia sẻ cảm nhận của bạn về trải nghiệm này..."></textarea>
+                </div>
+
+                <div class="mt-5">
+                    <h5 class="font-weight-bold">Bạn có muốn nhận thông tin về các sự kiện tư vấn trong tương lai?</h5>
+                    <div class="mt-2">
+                        <label class="inline-flex items-center mr-4">
+                            <input type="radio" name="receive-info" value="yes" class="form-radio text-blue-600"
+                                checked>
+                            <span class="ml-2">Có</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="receive-info" value="no" class="form-radio text-blue-600">
+                            <span class="ml-2">Không</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="mt-6 text-center">
+                    <button id="submit-feedback"
+                        class="bg-blue-600 text-white px-6 py-2 rounded-md font-medium hover:bg-blue-700 transition">
+                        <i class="fas fa-paper-plane mr-2"></i> Gửi Đánh Giá
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">VKU</h3>
+                    <p class="text-gray-400">Trường Đại học Công nghệ Thông tin và Truyền thông Việt - Hàn (VKU) là
+                        trường đại học công lập trực thuộc Đại học Đà Nẵng.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Liên hệ</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2 text-blue-400"></i>
+                            <span>470 Đường Trần Đại Nghĩa, Hòa Quý, Ngũ Hành Sơn, Đà Nẵng</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-2 text-blue-400"></i>
+                            <span>(0236) 3 707 707</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2 text-blue-400"></i>
+                            <span>info@vku.udn.vn</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Hỗ trợ</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-blue-400 transition">Câu hỏi thường gặp</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Hướng dẫn sử dụng</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Chính sách bảo mật</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Điều khoản dịch vụ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Kết nối với chúng tôi</h3>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-600 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-400 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-red-600 transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-pink-600 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400">Tải ứng dụng di động</p>
+                    <div class="flex space-x-2 mt-2">
+                        <a href="#" class="h-10">
+                            <img src="https://via.placeholder.com/120x40?text=App+Store" alt="App Store" class="h-full">
+                        </a>
+                        <a href="#" class="h-10">
+                            <img src="https://via.placeholder.com/120x40?text=Google+Play" alt="Google Play"
+                                class="h-full">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2023 Trường Đại học Công nghệ Thông tin và Truyền thông Việt - Hàn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/JavaScript/advise.js"></script>
 </body>
+
 </html>
