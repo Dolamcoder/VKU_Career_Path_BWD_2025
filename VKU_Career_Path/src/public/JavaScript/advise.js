@@ -105,8 +105,144 @@ const questions = [
             { text: "Con số", value: 0 },
             { text: "Ý tưởng", value: 100 }
         ]
+    },
+    {
+        id: 11,
+        text: "Bạn thích tham gia hoạt động xã hội hay nghiên cứu chuyên sâu?",
+        type: "slider",
+        options: [
+            { text: "Nghiên cứu", value: 0 },
+            { text: "Xã hội", value: 100 }
+        ]
+    },
+    {
+        id: 12,
+        text: "Bạn thích học các môn tự nhiên hay xã hội hơn?",
+        type: "slider",
+        options: [
+            { text: "Tự nhiên", value: 0 },
+            { text: "Xã hội", value: 100 }
+        ]
+    },
+    {
+        id: 13,
+        text: "Bạn mong muốn một công việc ổn định hay có cơ hội thăng tiến nhanh?",
+        type: "slider",
+        options: [
+            { text: "Ổn định", value: 0 },
+            { text: "Thăng tiến", value: 100 }
+        ]
+    },
+    {
+        id: 14,
+        text: "Bạn muốn làm việc trong môi trường năng động hay yên tĩnh?",
+        type: "slider",
+        options: [
+            { text: "Yên tĩnh", value: 0 },
+            { text: "Năng động", value: 100 }
+        ]
+    },
+    {
+        id: 15,
+        text: "Bạn có thích giúp đỡ người khác giải quyết vấn đề cá nhân không?",
+        type: "slider",
+        options: [
+            { text: "Không thích", value: 0 },
+            { text: "Rất thích", value: 100 }
+        ]
+    },
+    {
+        id: 16,
+        text: "Bạn thường chủ động lên kế hoạch hay thích làm việc theo cảm hứng?",
+        type: "slider",
+        options: [
+            { text: "Lên kế hoạch", value: 0 },
+            { text: "Theo cảm hứng", value: 100 }
+        ]
+    },
+    {
+        id: 17,
+        text: "Bạn có thích sử dụng máy tính và phần mềm không?",
+        type: "slider",
+        options: [
+            { text: "Không thích", value: 0 },
+            { text: "Rất thích", value: 100 }
+        ]
+    },
+    {
+        id: 18,
+        text: "Bạn có hứng thú với việc kinh doanh và đầu tư không?",
+        type: "slider",
+        options: [
+            { text: "Không hứng thú", value: 0 },
+            { text: "Rất hứng thú", value: 100 }
+        ]
+    },
+    {
+        id: 19,
+        text: "Bạn thích lập trình máy tính không?",
+        type: "slider",
+        options: [
+            { text: "Không thích", value: 0 },
+            { text: "Rất thích", value: 100 }
+        ]
+    },
+    {
+        id: 20,
+        text: "Bạn muốn làm việc ở công ty lớn hay khởi nghiệp nhỏ?",
+        type: "choice",
+        options: [
+            { text: "Công ty lớn", value: "big_corp" },
+            { text: "Khởi nghiệp", value: "startup" }
+        ]
+    },
+    {
+        id: 21,
+        text: "Bạn muốn làm việc tại Việt Nam hay nước ngoài?",
+        type: "choice",
+        options: [
+            { text: "Việt Nam", value: "vietnam" },
+            { text: "Nước ngoài", value: "abroad" }
+        ]
+    },
+    {
+        id: 22,
+        text: "Bạn muốn học ngành thiên về kỹ thuật hay nhân văn?",
+        type: "choice",
+        options: [
+            { text: "Kỹ thuật", value: "engineering" },
+            { text: "Nhân văn", value: "humanities" }
+        ]
+    },
+    {
+        id: 23,
+        text: "Bạn có thích thuyết trình trước đám đông không?",
+        type: "slider",
+        options: [
+            { text: "Không thích", value: 0 },
+            { text: "Rất thích", value: 100 }
+        ]
+    },
+    {
+        id: 24,
+        text: "Bạn muốn công việc thiên về tay nghề hay trí tuệ?",
+        type: "choice",
+        options: [
+            { text: "Tay nghề", value: "skill" },
+            { text: "Trí tuệ", value: "intellectual" }
+        ]
+    },
+    {
+        id: 25,
+        text: "Bạn cảm thấy hứng thú hơn với sản phẩm hữu hình hay dịch vụ?",
+        type: "choice",
+        options: [
+            { text: "Sản phẩm", value: "product" },
+            { text: "Dịch vụ", value: "service" }
+        ]
     }
 ];
+
 
 // object dữ liệu ngành
 const programs = [
@@ -282,27 +418,41 @@ function loadQuestion(index) {
     }
 
     const question = questions[index];
-    currentQuestionEl.textContent = question.id;
-    progressFill.style.width = `${(question.id / questions.length) * 100}%`;
+    currentQuestionEl.textContent = "Câu " + question.id + "/" + questions.length; //hiển thị số lương câu hỏi
+    progressFill.style.width = (question.id / questions.length * 100) + "%"; //bar tiến trình
 
     let questionHTML = `
-                <h3 class="text-xl font-bold text-gray-800 mb-6">${question.text}</h3>
-            `;
+        <h3 class="text-xl font-bold text-gray-800 mb-6">${question.text}</h3>
+    `; //hiển thị câu hỏi
 
     if (question.type === 'slider') {
         questionHTML += `
-                    <div class="slider-container mb-4">
-                        <div class="flex justify-between mb-2">
-                            <span class="text-gray-600">${question.options[0].text}</span>
-                            <span class="text-gray-600">${question.options[1].text}</span>
-                        </div>
-                        <input type="range" min="0" max="100" value="50" class="slider" id="slider-${question.id}">
-                        <div class="flex justify-between mt-1">
-                            <span class="text-xs text-gray-500">Không thích</span>
-                            <span class="text-xs text-gray-500">Rất thích</span>
-                        </div>
-                    </div>
-                `;
+            <div class="slider-container mb-4">
+                <div class="flex justify-between mb-2">
+                    <span class="text-gray-600">${question.options[0].text}</span>
+                    <span class="text-gray-600">${question.options[1].text}</span>
+                </div>
+                <input type="range" min="0" max="100" value="50" class="slider w-full" id="slider-${question.id}">
+                <div class="flex justify-between mt-1">
+                    <span class="text-xs text-gray-500">Không thích</span>
+                    <span class="text-xs text-gray-500">Rất thích</span>
+                </div>
+            </div>
+        `;
+    } else if (question.type === 'choice') {
+        questionHTML += `
+            <div class="grid grid-cols-1 gap-3">
+        `;
+        for (let i = 0; i < question.options.length; i++) {
+            const opt = question.options[i];
+            questionHTML += `
+                <label class="flex items-center space-x-3 p-3 border rounded-md cursor-pointer hover:bg-gray-50">
+                    <input type="radio" name="choice-${question.id}" value="${opt.value}" class="form-radio h-4 w-4">
+                    <span class="text-gray-700">${opt.text}</span>
+                </label>
+            `;
+        }
+        questionHTML += `</div>`;
     }
 
     questionContainer.innerHTML = questionHTML;
@@ -344,16 +494,31 @@ prevBtn.addEventListener('click', function () {
 // lưu kq b2
 function saveAnswer() {
     const question = questions[currentQuestion];
-    let answerValue;
+    let answerValue = null;
 
     if (question.type === 'slider') {
-        const slider = document.getElementById(`slider-${question.id}`);
-        answerValue = parseInt(slider.value);
+        const slider = document.getElementById('slider-' + question.id);
+        if (slider) {
+            answerValue = parseInt(slider.value);
+        }
+    } else if (question.type === 'choice') {
+        const selected = document.querySelector('input[name="choice-' + question.id + '"]:checked');
+        if (selected) {
+            answerValue = selected.value;
+        }
     }
 
     // cập nhật r thêm câu trả lời vô arr (cập nhật lại nếu trả lời lại)
-    if (answers[currentQuestion]) {
-        answers[currentQuestion].value = answerValue;
+    let existingIndex = -1;
+    for (let i = 0; i < answers.length; i++) {
+        if (answers[i].questionId === question.id) {
+            existingIndex = i;
+            break;
+        }
+    }
+
+    if (existingIndex !== -1) {
+        answers[existingIndex].value = answerValue;
     } else {
         answers.push({
             questionId: question.id,
@@ -368,50 +533,72 @@ function showResults() {
     testResults.classList.remove('hidden');
 
     // tính điểm tb
-    const avgScore = answers.reduce((sum, answer) => sum + answer.value, 0) / answers.length;
+    let total = 0;
+    let count = 0;
+
+    for (let i = 0; i < answers.length; i++) {
+        const answer = answers[i];
+        if (typeof answer.value === 'number') {
+            total += answer.value;
+            count++;
+        }
+    }
+
+    let avgScore = 0;
+    if (count > 0) {
+        avgScore = total / count;
+    }
 
     // sắp xếp kq giảm dần theo mức phù hợp 
-    const sortedPrograms = [...programs].sort((a, b) => {
-        const aDiff = Math.abs(a.fitScore - avgScore);
-        const bDiff = Math.abs(b.fitScore - avgScore);
-        return aDiff - bDiff;
+    const sortedPrograms = [];
+    for (let i = 0; i < programs.length; i++) {
+        sortedPrograms.push(programs[i]);
+    }
+
+    sortedPrograms.sort(function (a, b) {
+        const diffA = Math.abs(a.fitScore - avgScore);
+        const diffB = Math.abs(b.fitScore - avgScore);
+        return diffA - diffB;
     });
 
     // hiển tị 3 ngành phù hợp nhất
     resultsContainer.innerHTML = '';
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 3 && i < sortedPrograms.length; i++) {
         const program = sortedPrograms[i];
         const fitPercentage = 100 - Math.abs(program.fitScore - avgScore);
 
+        let strengthsHTML = '';
+        for (let j = 0; j < program.strengths.length; j++) {
+            strengthsHTML += `<span class="advantage-badge bg-blue-100 text-blue-800">${program.strengths[j]}</span>`;
+        }
+
         resultsContainer.innerHTML += `
-                    <div class="program-card bg-white p-6 rounded-lg border border-gray-200 fade-in" style="animation-delay: ${i * 0.1}s">
-                        <div class="flex items-center mb-4">
-                            <img src="${program.image}" alt="${program.name}" class="w-16 h-16 object-cover rounded-md mr-4">
-                            <h4 class="text-lg font-bold text-gray-800">${program.name}</h4>
-                        </div>
-                        <p class="text-gray-600 mb-4">${program.description}</p>
-                        <div class="mb-4">
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm font-medium text-gray-700">Độ phù hợp</span>
-                                <span class="text-sm font-medium text-blue-600">${fitPercentage.toFixed(0)}%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2">
-                                <div class="bg-blue-600 h-2 rounded-full" style="width: ${fitPercentage}%"></div>
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <h5 class="text-sm font-medium text-gray-700 mb-2">Thế mạnh tại VKU</h5>
-                            <div class="flex flex-wrap gap-2">
-                                ${program.strengths.map(strength =>
-            `<span class="advantage-badge bg-blue-100 text-blue-800">${strength}</span>`
-        ).join('')}
-                            </div>
-                        </div>
-                        <a href="${program.link}" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
-                            Xem chi tiết <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
+            <div class="program-card bg-white p-6 rounded-lg border border-gray-200 fade-in" style="animation-delay: ${i * 0.1}s">
+                <div class="flex items-center mb-4">
+                    <img src="${program.image}" alt="${program.name}" class="w-16 h-16 object-cover rounded-md mr-4">
+                    <h4 class="text-lg font-bold text-gray-800">${program.name}</h4>
+                </div>
+                <p class="text-gray-600 mb-4">${program.description}</p>
+                <div class="mb-4">
+                    <div class="flex justify-between mb-1">
+                        <span class="text-sm font-medium text-gray-700">Độ phù hợp</span>
+                        <span class="text-sm font-medium text-blue-600">${Math.round(fitPercentage)}%</span>
                     </div>
-                `;
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-blue-600 h-2 rounded-full" style="width: ${fitPercentage}%"></div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <h5 class="text-sm font-medium text-gray-700 mb-2">Thế mạnh tại VKU</h5>
+                    <div class="flex flex-wrap gap-2">
+                        ${strengthsHTML}
+                    </div>
+                </div>
+                <a href="${program.link}" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                    Xem chi tiết <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        `;
     }
 }
 
@@ -428,6 +615,8 @@ retakeBtn.addEventListener('click', function () {
 saveResultsBtn.addEventListener('click', function () {
     alert('Vui lòng đăng nhập để lưu kết quả trắc nghiệm của bạn.');
 });
+
+
 
 // hiện thị kq b5
 function displayFinalResults() {
