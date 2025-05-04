@@ -12,10 +12,13 @@
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="/css/index.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 
 <body>
+  <!-- Header -->
   <!-- Header -->
   <header id="mainHeader">
     <div class="header_logo">
@@ -82,7 +85,7 @@
     <div class="header_menu">
       <ul>
         <li class="active"><a href="#">Trang chủ</a></li>
-        <li><a href="#">Tư vấn ngành</a></li>
+        <li><a href="/advise">Tư vấn ngành</a></li>
         <li><a href="#">Mô tả ngành</a></li>
         <li><a href="#">Lộ trình học tập</a></li>
         <li><a href="#">Cộng đồng</a></li>
@@ -95,15 +98,73 @@
       <img src="" alt="Avatar">
     </div>
   </header>
-
   <!-- Introduce Section -->
   <section class="introduce">
-    <div class="introduce_content">
-      <h2 data-aos="fade-up">VKU Career Path – Định Hướng Tương Lai Nghề Nghiệp Cùng Bạn</h2>
-      <ul>
-        <li></li>
-      </ul>
-      <button data-toggle="modal" data-target="#videoModal"><i class="fa fa-play"></i><span>Xem ngay</span></button>
+    <div class="pb-5 pt-3 ">
+      <div class="container text-center">
+        <h2>
+          VKU Career Path - Cùng bạn đi đến tương lai
+        </h2>
+        <p class="mb-5 titleP">
+          Những giá trị thiết thực giúp bạn chọn đúng ngành – đi đúng hướng – đạt đến ước mơ!
+        </p>
+        <div class="row g-4">
+          <!-- Card 1 -->
+          <div class="col-md-6 col-lg-6">
+            <div class="card h-100 shadow border-0 hover-shadow">
+              <div class="card-body p-4">
+                <div class="display-4  text-primary mb-3">🔍</div>
+                <h5 class="card-title fw-bold text-dark">Khám phá ngành học phù hợp</h5>
+                <p class="card-text text-muted">
+                  Trắc nghiệm định hướng đơn giản, dễ hiểu giúp bạn nhanh chóng tìm ra ngành học lý tưởng tại VKU.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-md-6 col-lg-6">
+            <div class="card h-100 shadow border-0 hover-shadow">
+              <div class="card-body p-4">
+                <div class="display-4  text-success mb-3">📚</div>
+                <h5 class="card-title fw-bold text-dark">Hiểu rõ ngành – Tự tin chọn lựa</h5>
+                <p class="card-text text-muted">
+                  Mô tả chi tiết từng ngành học, cơ hội nghề nghiệp, lộ trình đào tạo và yêu cầu đầu vào giúp bạn quyết
+                  định sáng suốt.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-md-6 col-lg-6">
+            <div class="card h-100 shadow border-0 hover-shadow">
+              <div class="card-body p-4">
+                <div class=" display-4  text-warning mb-3">🛤️</div>
+                <h5 class="card-title fw-bold text-dark">Lộ trình học tập cá nhân hóa</h5>
+                <p class="card-text text-muted">
+                  Lên kế hoạch học tập rõ ràng từ năm nhất đến năm tư, giúp bạn vững bước trên hành trình hướng tới công
+                  việc mơ ước.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="col-md-6 col-lg-6">
+            <div class="card h-100 shadow border-0 hover-shadow">
+              <div class="card-body p-4">
+                <div class="display-4  text-danger mb-3">🤝</div>
+                <h5 class="card-title fw-bold text-dark">Cộng đồng đồng hành & hỗ trợ</h5>
+                <p class="card-text text-muted">
+                  Kết nối học sinh – sinh viên – giảng viên – tư vấn viên. Hỏi đáp dễ dàng, đăng ký tư vấn tuyển sinh
+                  ngay trên web.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Video Modal -->
     <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel"
@@ -126,7 +187,6 @@
       </div>
     </div>
   </section>
-
   <!-- List Majors Section -->
   <section class="list_major container-fluid section">
     <h2 data-aos="fade-up">Danh Sách Ngành Học</h2>
@@ -314,60 +374,79 @@
       </div>
     </div>
   </section>
-
-
   <section class="map">
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.60616692491!2d108.2483614451753!3d15.97526540261403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3142108997dc971f%3A0x1295cb3d313469c9!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgVGjDtG5nIHRpbiB2w6AgVHJ1eeG7gW4gdGjDtG5nIFZp4buHdCAtIEjDoG4sIMSQ4bqhaSBo4buNYyDEkMOgIE7hurVuZw!5e1!3m2!1svi!2s!4v1745515559793!5m2!1svi!2s"
       width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"></iframe>
   </section>
-  <footer class="footer py-3 section bg-dark text-white">
-    <div class="container pt-5 pb-1">
-      <div class="row">
-        <!-- Logo and Description -->
-        <div class="col-md-4 mb-4 ">
-          <div class="footer-logo mb-3">
-            <a href="#" class="d-flex align-items-center">
-              <img src="/img/logon-removebg-preview.png" alt="VKU Logo" style="width: 60px; height: auto;">
-              <span class="ml-2 font-weight-bold">VKU Career Path</span>
-            </a>
-          </div>
-          <p>Đại học Công nghệ Thông tin và Truyền thông Việt – Hàn (VKU) – Nơi định hướng và chắp cánh ước mơ nghề
-            nghiệp của bạn trong thời đại số.</p>
+  <footer class="bg-dark text-white pt-5 pb-4">
+    <div class="container">
+        <div class="row g-5">
+            <!-- VKU Info -->
+            <div class="col-md-3">
+                <h5 class="fw-bold mb-3">🎓 VKU Career Path</h5>
+                <p class="text-white-50 small ">
+                    Trường Đại học Công nghệ Thông tin và Truyền thông Việt - Hàn (VKU)
+                    là trường đại học công lập trực thuộc Đại học Đà Nẵng.
+                </p>
+            </div>
+
+            <!-- Liên hệ -->
+            <div class="col-md-3">
+                <h5 class="fw-bold mb-3">🤝 Liên hệ</h5>
+                <ul class="list-unstyled text-white-50 small">
+                    <li class="d-flex mb-2 align-items-start">
+                        <i class="fas fa-map-marker-alt me-2 text-warning mt-1"></i>
+                        <span>470 Trần Đại Nghĩa, Hòa Quý, Ngũ Hành Sơn, Đà Nẵng</span>
+                    </li>
+                    <li class="d-flex mb-2 align-items-center">
+                        <i class="fas fa-phone-alt me-2 text-warning"></i>
+                        <span>(0236) 3 707 707</span>
+                    </li>
+                    <li class="d-flex align-items-center">
+                        <i class="fas fa-envelope me-2 text-warning"></i>
+                        <span>info@vku.udn.vn</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Hỗ trợ -->
+            <div class="col-md-3">
+                <h5 class="fw-bold mb-3">🔧 Hỗ trợ</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white-50 text-decoration-none d-block py-1 hover-opacity">Câu hỏi thường gặp</a></li>
+                    <li><a href="#" class="text-white-50 text-decoration-none d-block py-1 hover-opacity">Hướng dẫn sử dụng</a></li>
+                    <li><a href="#" class="text-white-50 text-decoration-none d-block py-1 hover-opacity">Chính sách bảo mật</a></li>
+                    <li><a href="#" class="text-white-50 text-decoration-none d-block py-1 hover-opacity">Điều khoản dịch vụ</a></li>
+                </ul>
+            </div>
+
+            <!-- Kết nối -->
+            <div class="col-md-3">
+                <h5 class="fw-bold mb-3">🌐 Kết nối với chúng tôi</h5>
+                <div class="d-flex mb-3">
+                    <a href="#" class="btn btn-outline-light btn-sm rounded-circle me-2" style="border-color:#3b5998; color:#3b5998;"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="btn btn-outline-light btn-sm rounded-circle me-2" style="border-color:#1DA1F2; color:#1DA1F2;"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="btn btn-outline-light btn-sm rounded-circle me-2" style="border-color:#FF0000; color:#FF0000;"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="btn btn-outline-light btn-sm rounded-circle" style="border-color:#C13584; color:#C13584;"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p class="text-white-50 small mb-2">Tải ứng dụng di động</p>
+                <div class="d-flex">
+                    <a href="#">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" height="40">
+                    </a>
+                </div>
+            </div>
         </div>
-        <!-- Quick Links -->
-        <div class="col-md-4 mb-4">
-          <h5>Liên Kết Nhanh</h5>
-          <ul class="list-unstyled">
-            <li><a href="#" class="text-white">Trang chủ</a></li>
-            <li><a href="#" class="text-white">Tư vấn ngành</a></li>
-            <li><a href="#" class="text-white">Mô tả ngành</a></li>
-            <li><a href="#" class="text-white">Lộ trình học tập</a></li>
-            <li><a href="#" class="text-white">Cộng đồng</a></li>
-          </ul>
+
+        <hr class="border-secondary mt-5">
+
+        <div class="text-center text-white-50 mt-3 small">
+            <p>© 2023 Trường Đại học Công nghệ Thông tin và Truyền thông Việt - Hàn. Dù bạn là ai, bạn ở nơi nào chúng tôi luôn đồng hành cùng bạn.</p>
         </div>
-        <!-- Contact Info -->
-        <div class="col-md-4 mb-4">
-          <h5>Liên Hệ</h5>
-          <p><i class="fas fa-map-marker-alt mr-2"></i> 176 Trần Đại Nghĩa, Ngũ Hành Sơn, Đà Nẵng</p>
-          <p><i class="fas fa-phone-alt mr-2"></i> (+84) 236 123 4567</p>
-          <p><i class="fas fa-envelope mr-2"></i> vkucareerpath@gmail.com</p>
-          <div class="social-icons mt-3">
-            <a href="#" class="text-white mr-3"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="text-white mr-3"><i class="fab fa-youtube"></i></a>
-            <a href="#" class="text-white mr-3"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-        </div>
-      </div>
-      <hr class="bg-light">
-      <div class="text-center py-3">
-        <p class="mb-0">&copy; 2025 VKU Career Path. Cùng bạn hướng đến tương lai. Dù bạn là ai, bạn ở nơi nào chúng tôi
-          vẫn luôn đồng hành cùng bạn.</p>
-      </div>
     </div>
-  </footer>
+</footer>
   <!-- Animation Background -->
   <section class="animation">
     <div class="set">
@@ -401,5 +480,6 @@
   <!-- JavaScript -->
   <script src="/JavaScript/chart.js"></script>
   <script src="/JavaScript/effect.js"></script> 
+  <script src="/JavaScript/header.js"></script>
 </body>
 </html>

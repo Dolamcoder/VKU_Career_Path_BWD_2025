@@ -18,6 +18,7 @@
 
 <body>
     <!-- Header -->
+    <!-- Header -->
     <header id="mainHeader">
         <div class="header_logo">
             <a href="#"><img src="/img/logon-removebg-preview.png" alt="VKU Logo"><span>VKU Career Path</span></a>
@@ -33,8 +34,8 @@
                     <button id="closeMenuMobile" class="menu_mobile_close"><i class="fa fa-times"></i></button>
                 </div>
                 <div class="menu_mobile_item">
-                    <li class="active"><a href="#">Trang chủ</a></li>
-                    <li><a href="#">Tư vấn ngành</a></li>
+                    <li><a href="/">Trang chủ</a></li>
+                    <li class="active"><a href="#">Tư vấn ngành</a></li>
                     <li><a href="#">Mô tả ngành</a></li>
                     <li><a href="#">Lộ trình học tập</a></li>
                     <li><a href="#">Cộng đồng</a></li>
@@ -44,11 +45,12 @@
         </div>
         <div class="header_menu">
             <ul>
-                <li class="active"><a href="#">Trang chủ</a></li>
-                <li><a href="/advise">Tư vấn ngành</a></li>
+                <li><a href="/">Trang chủ</a></li>
+                <li class="active"><a href="#">Tư vấn ngành</a></li>
                 <li><a href="#">Mô tả ngành</a></li>
                 <li><a href="#">Lộ trình học tập</a></li>
                 <li><a href="#">Cộng đồng</a></li>
+                <li><a href="#">Đăng nhập</a></li>
             </ul>
         </div>
         <div class="logIn_signUp">
@@ -84,11 +86,12 @@
         </div>
         <div class="header_menu">
             <ul>
-                <li class="active"><a href="#">Trang chủ</a></li>
-                <li><a href="#">Tư vấn ngành</a></li>
+                <li><a href="/">Trang chủ</a></li>
+                <li class="active"><a href="#">Tư vấn ngành</a></li>
                 <li><a href="#">Mô tả ngành</a></li>
                 <li><a href="#">Lộ trình học tập</a></li>
                 <li><a href="#">Cộng đồng</a></li>
+                <li><a href="#">Đăng nhập</a></li>
             </ul>
         </div>
         <div class="logIn_signUp">
@@ -98,7 +101,7 @@
             <img src="" alt="Avatar">
         </div>
     </header>
-    s
+
     <!-- hiển thị bước -->
     <div class="stepper-container container mt-5">
         <div class="stepper d-flex justify-content-between mb-4">
@@ -537,79 +540,85 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-lg font-bold mb-4">VKU</h3>
-                    <p class="text-gray-400">Trường Đại học Công nghệ Thông tin và Truyền thông Việt - Hàn (VKU) là
-                        trường đại học công lập trực thuộc Đại học Đà Nẵng.</p>
+    <footer class="bg-dark text-white pt-5 pb-4">
+        <div class="container">
+            <div class="row g-5">
+                <!-- VKU Info -->
+                <div class="col-md-3">
+                    <h5 class="fw-bold mb-3">🎓 VKU Career Path</h5>
+                    <p class="text-white-50 small ">
+                        Trường Đại học Công nghệ Thông tin và Truyền thông Việt - Hàn (VKU)
+                        là trường đại học công lập trực thuộc Đại học Đà Nẵng.
+                    </p>
                 </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Liên hệ</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li class="flex items-start">
-                            <i class="fas fa-map-marker-alt mt-1 mr-2 text-blue-400"></i>
-                            <span>470 Đường Trần Đại Nghĩa, Hòa Quý, Ngũ Hành Sơn, Đà Nẵng</span>
+
+                <!-- Liên hệ -->
+                <div class="col-md-3">
+                    <h5 class="fw-bold mb-3">🤝 Liên hệ</h5>
+                    <ul class="list-unstyled text-white-50 small">
+                        <li class="d-flex mb-2 align-items-start">
+                            <i class="fas fa-map-marker-alt me-2 text-warning mt-1"></i>
+                            <span>470 Trần Đại Nghĩa, Hòa Quý, Ngũ Hành Sơn, Đà Nẵng</span>
                         </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-phone-alt mr-2 text-blue-400"></i>
+                        <li class="d-flex mb-2 align-items-center">
+                            <i class="fas fa-phone-alt me-2 text-warning"></i>
                             <span>(0236) 3 707 707</span>
                         </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-envelope mr-2 text-blue-400"></i>
+                        <li class="d-flex align-items-center">
+                            <i class="fas fa-envelope me-2 text-warning"></i>
                             <span>info@vku.udn.vn</span>
                         </li>
                     </ul>
                 </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Hỗ trợ</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-blue-400 transition">Câu hỏi thường gặp</a></li>
-                        <li><a href="#" class="hover:text-blue-400 transition">Hướng dẫn sử dụng</a></li>
-                        <li><a href="#" class="hover:text-blue-400 transition">Chính sách bảo mật</a></li>
-                        <li><a href="#" class="hover:text-blue-400 transition">Điều khoản dịch vụ</a></li>
+
+                <!-- Hỗ trợ -->
+                <div class="col-md-3">
+                    <h5 class="fw-bold mb-3">🔧 Hỗ trợ</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50 text-decoration-none d-block py-1 hover-opacity">Câu hỏi
+                                thường gặp</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none d-block py-1 hover-opacity">Hướng dẫn
+                                sử dụng</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none d-block py-1 hover-opacity">Chính sách
+                                bảo mật</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none d-block py-1 hover-opacity">Điều khoản
+                                dịch vụ</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Kết nối với chúng tôi</h3>
-                    <div class="flex space-x-4 mb-4">
-                        <a href="#"
-                            class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-600 transition">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-400 transition">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-red-600 transition">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-pink-600 transition">
-                            <i class="fab fa-instagram"></i>
-                        </a>
+
+                <!-- Kết nối -->
+                <div class="col-md-3">
+                    <h5 class="fw-bold mb-3">🌐 Kết nối với chúng tôi</h5>
+                    <div class="d-flex mb-3">
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle me-2"
+                            style="border-color:#3b5998; color:#3b5998;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle me-2"
+                            style="border-color:#1DA1F2; color:#1DA1F2;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle me-2"
+                            style="border-color:#FF0000; color:#FF0000;"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle"
+                            style="border-color:#C13584; color:#C13584;"><i class="fab fa-instagram"></i></a>
                     </div>
-                    <p class="text-gray-400">Tải ứng dụng di động</p>
-                    <div class="flex space-x-2 mt-2">
-                        <a href="#" class="h-10">
-                            <img src="https://via.placeholder.com/120x40?text=App+Store" alt="App Store" class="h-full">
-                        </a>
-                        <a href="#" class="h-10">
-                            <img src="https://via.placeholder.com/120x40?text=Google+Play" alt="Google Play"
-                                class="h-full">
+                    <p class="text-white-50 small mb-2">Tải ứng dụng di động</p>
+                    <div class="d-flex">
+                        <a href="#">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                                alt="Google Play" height="40">
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-                <p>© 2023 Trường Đại học Công nghệ Thông tin và Truyền thông Việt - Hàn. All rights reserved.</p>
+
+            <hr class="border-secondary mt-5">
+
+            <div class="text-center text-white-50 mt-3 small">
+                <p>© 2023 Trường Đại học Công nghệ Thông tin và Truyền thông Việt - Hàn. Dù bạn là ai, bạn ở nơi nào
+                    chúng tôi luôn đồng hành cùng bạn.</p>
             </div>
         </div>
     </footer>
-
     <script src="/JavaScript/advise.js"></script>
+    <script src="/JavaScript/header.js"></script>
 </body>
 
 </html>

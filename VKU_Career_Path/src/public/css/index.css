@@ -20,9 +20,16 @@ body {
 section {
   margin-bottom: 50px;
   padding: 30px 0;
-  background-color: rgba(255, 255, 255, 0.801);
+  background-color: rgba(255, 255, 255, 0.95);
 }
-
+section h2{
+  font-size: 50px;
+  font-weight: bold;
+  color: #1d1d1d;
+  margin-bottom: 20px;
+  line-height: 1.4;
+  color:#2563eb;
+}
 /* Header */
 header {
   display: flex;
@@ -31,7 +38,7 @@ header {
   background: linear-gradient(90deg, #9966FF, #FF66CC, #6666FF);
   background-size: 200%;
   animation: gradientBG 10s ease infinite;
-  padding: 15px 20px;
+  padding: 5px 10px;
 }
 
 @keyframes gradientBG {
@@ -147,10 +154,22 @@ header {
   background: linear-gradient(to bottom right, #5aaf92, #7d3a46);
   transition: all 0.5s ease;
   margin-bottom: 8px;
+  margin-left: 10px;
 }
-
+.header_menu ul li.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 90%;
+  height: 3px;
+  background: linear-gradient(to bottom right, #5aaf92, #7d3a46);
+  transition: all 0.5s ease;
+  margin-left: 10px;
+  margin-bottom: 8px;
+}
 .header_menu ul li:hover::after {
-  width: 100%;
+  width: 90%;
 }
 
 .logIn_signUp button {
@@ -168,7 +187,7 @@ header {
 
 .logIn_signUp button a i,
 .logIn_signUp button a span {
-  color: black;
+  color: white;
   transition: all 0.5s ease;
 }
 
@@ -192,7 +211,6 @@ header {
 /* Menu Mobile */
 .menu_mobile {
   background-color: #fff;
-  padding: 20px;
   position: fixed;
   width: 70vw;
   height: 100vh;
@@ -207,31 +225,28 @@ header {
 .menu_mobile_header {
   display: flex;
   justify-content: space-between;
+  gap:0;
+  width: 100%;
   align-items: center;
   margin-bottom: 20px;
+  background: linear-gradient(90deg, #9966FF, #FF66CC);
 }
-
-.menu_mobile_logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 18px;
-  font-weight: bold;
-  padding: 5px;
-  background:rgba(0, 0, 0, 0.7);
-}
-
 .menu_mobile_logo img {
   width: 60px;
   height: auto;
 }
-.menu_mobile_logo a {
-  text-decoration: none;
-}
 .menu_mobile_logo a span {
   color: white;
+  font-size: 1rem;
 }
-
+.menu_mobile_logo a {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 .menu_mobile_close {
   background: none;
   border: none;
@@ -245,7 +260,11 @@ header {
 .menu_mobile_close i {
   font-size: 30px;
 }
-
+.menu_mobile_close:hover i {
+  color: #ff0000;
+  transform: scale(1.2);
+  transition: all 0.5s ease;
+}
 .menu_mobile_item {
   display: flex;
   flex-direction: column;
@@ -286,81 +305,30 @@ header {
 
 /* Introduce */
 .introduce {
-  padding: 70px 10px;
-  padding-bottom: 0;
   position: relative;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.767);
 }
-
-.introduce_content {
-  width: 70%;
-  margin: 0 auto;
-  text-align: center;
-  margin-bottom: 70px;
-}
-
-.introduce_content h2 {
-  font-size: 50px;
-  font-weight: bold;
-  background: linear-gradient(90deg, #FF3333, #ec7532);
-  background-clip: text;
-  color: transparent;
-  margin-bottom: 20px;
-  line-height: 1.4;
-}
-
-.introduce_content p {
-  font-size: 18px;
+.introduce .text-center .titleP{
+  font-size: 20px;
   color: #444;
   line-height: 1.6;
-  font-weight: 400;
+  font-weight: 700;
+  margin-bottom: 30px;
 }
-
-.introduce_content button {
-  font-size: 0.8rem;
-  letter-spacing: 4px;
-  padding: 12px 24px;
-  margin-bottom: 50px;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  border-radius: 30px;
-  background: linear-gradient(to right, #FF3333, #ec7532, #FF3333);
-  color: white;
-  position: relative;
-  overflow: hidden;
-  animation: pulseButton 2s ease infinite;
+.introduce h5{
+  font-size: 20px;
+  color: #444;
+  line-height: 1.6;
+  font-weight: 600;
+  margin-bottom: 30px;
 }
-
-@keyframes pulseButton {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+.introduce .text-center p{
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+  font-weight: 500;
+  margin-bottom: 30px;
 }
-
-.introduce_content button::before {
-  content: '';
-  width: 110%;
-  height: 100%;
-  background: linear-gradient(to right, #ec7532, #FF3333, #ec7532);
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: skew(30deg) translateX(-110%);
-  transition: all 0.5s ease;
-  z-index: 1;
-}
-
-.introduce_content button:hover::before {
-  transform: skew(30deg) translateX(-10px);
-}
-
-.introduce_content button span,
-.introduce_content button i {
-  z-index: 5;
-  position: relative;
-}
-
 /* Modal Video */
 .modal-content {
   border-radius: 10px;
@@ -382,13 +350,6 @@ header {
   margin-bottom: 70px;
 }
 
-.list_major h2 {
-  font-size: 50px;
-  font-weight: bold;
-  color: #1d1d1d;
-  margin-bottom: 20px;
-  line-height: 1.4;
-}
 
 .list_major p {
   font-size: 18px;
@@ -443,18 +404,11 @@ header {
   background-color: #ffffffd7;
 }
 
-.statistic h2, .bar-charts h2 {
-  font-size: 50px;
-  font-weight: bold;
-  color: #1d1d1d;
-  margin: 20px 0;
-  line-height: 1.4;
-}
 
 .statistic .counter {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #007bff;
+  color: black;
 }
 
 /* Bar Charts */
@@ -472,15 +426,6 @@ header {
 .news {
   overflow-x: hidden;
 }
-
-.news h2 {
-  font-size: 45px;
-  font-weight: bold;
-  color: #1d1d1d;
-  margin: 20px 0;
-  line-height: 1.4;
-}
-
 .news-card {
   border-radius: 10px;
   overflow: hidden;
@@ -541,7 +486,13 @@ button:hover {
   width: 100%;
   height: 400px;
 }
-
+footer h5{
+  font-size: 20px;
+  color: white;
+  line-height: 1.6;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
 /* Animation Background */
 .animation {
   position: fixed;
@@ -614,6 +565,19 @@ button:hover {
   to { transform: rotate(360deg); }
 }
 
+/* Hiệu ứng thu vào rồi phóng ra */
+@keyframes scaleInOut {
+  0% { transform: scale(1); }    /* Bắt đầu với kích thước bình thường */
+  50% { transform: scale(0.95); } /* Thu nhỏ lại */
+  100% { transform: scale(1); }  /* Phóng to lại về kích thước ban đầu */
+}
+
+/* Áp dụng hiệu ứng cho các thẻ card */
+.card {
+  animation: scaleInOut 3s ease-in-out infinite; /* Lặp lại hiệu ứng liên tục */
+}
+
+/* Responsive Design */
 @media (max-width: 1024px) {
   /* không hiển thị menu và đăng nhập  */
   .header_menu,
