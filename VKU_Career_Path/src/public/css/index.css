@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 html {
@@ -20,24 +20,53 @@ body {
 section {
   margin-bottom: 50px;
   padding: 30px 0;
-  background-color: rgba(255, 255, 255, 0.801);
+  background-color: rgba(255, 255, 255, 0.95);
 }
+section h2 {
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  line-height: 1.4;
+  background: linear-gradient(90deg, #2563eb, #9333ea, #22c55e, #2563eb);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: shineText 5s linear infinite;
+}
+
+@keyframes shineText {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
 
 /* Header */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(90deg, #9966FF, #FF66CC, #6666FF);
+  background: linear-gradient(90deg, #9966ff, #ff66cc, #6666ff);
   background-size: 200%;
   animation: gradientBG 10s ease infinite;
-  padding: 15px 20px;
+  padding: 5px 10px;
 }
 
 @keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .header_logo a {
@@ -56,8 +85,13 @@ header {
 }
 
 @keyframes scaleLogo {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
 }
 
 .header_bar {
@@ -101,7 +135,6 @@ header {
 }
 
 .header_menu {
-  background-color: white;
   border-radius: 8px;
 }
 
@@ -123,7 +156,7 @@ header {
 .header_menu li a {
   font-size: 1.1rem;
   font-weight: 500;
-  color: black;
+  color:white;
   text-decoration: none;
   margin: 0 10px;
   position: relative;
@@ -134,7 +167,7 @@ header {
 .header_menu li:hover a,
 .header_menu li.active a {
   font-weight: bold;
-  color: black;
+  color: white;
 }
 
 .header_menu ul li::after {
@@ -144,20 +177,32 @@ header {
   left: 0;
   width: 0;
   height: 3px;
-  background: linear-gradient(to bottom right, #5aaf92, #7d3a46);
+  background-color: white;
   transition: all 0.5s ease;
   margin-bottom: 8px;
+  margin-left: 10px;
 }
-
+.header_menu ul li.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 90%;
+  height: 3px;
+  background-color: white;
+  transition: all 0.5s ease;
+  margin-left: 10px;
+  margin-bottom: 8px;
+}
 .header_menu ul li:hover::after {
-  width: 100%;
+  width: 90%;
 }
 
 .logIn_signUp button {
   margin-right: 10px;
   border: none;
   border-radius: 20px;
-  background-color: #3399FF;
+  background-color: #3399ff;
   padding: 10px 20px;
   transition: all 0.5s ease;
 }
@@ -168,7 +213,7 @@ header {
 
 .logIn_signUp button a i,
 .logIn_signUp button a span {
-  color: black;
+  color: white;
   transition: all 0.5s ease;
 }
 
@@ -192,7 +237,6 @@ header {
 /* Menu Mobile */
 .menu_mobile {
   background-color: #fff;
-  padding: 20px;
   position: fixed;
   width: 70vw;
   height: 100vh;
@@ -207,31 +251,28 @@ header {
 .menu_mobile_header {
   display: flex;
   justify-content: space-between;
+  gap: 0;
+  width: 100%;
   align-items: center;
   margin-bottom: 20px;
+  background: linear-gradient(90deg, #9966ff, #ff66cc);
 }
-
-.menu_mobile_logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 18px;
-  font-weight: bold;
-  padding: 5px;
-  background:rgba(0, 0, 0, 0.7);
-}
-
 .menu_mobile_logo img {
   width: 60px;
   height: auto;
 }
-.menu_mobile_logo a {
-  text-decoration: none;
-}
 .menu_mobile_logo a span {
   color: white;
+  font-size: 1rem;
 }
-
+.menu_mobile_logo a {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 .menu_mobile_close {
   background: none;
   border: none;
@@ -245,7 +286,11 @@ header {
 .menu_mobile_close i {
   font-size: 30px;
 }
-
+.menu_mobile_close:hover i {
+  color: #ff0000;
+  transform: scale(1.2);
+  transition: all 0.5s ease;
+}
 .menu_mobile_item {
   display: flex;
   flex-direction: column;
@@ -286,81 +331,30 @@ header {
 
 /* Introduce */
 .introduce {
-  padding: 70px 10px;
-  padding-bottom: 0;
   position: relative;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.767);
 }
-
-.introduce_content {
-  width: 70%;
-  margin: 0 auto;
-  text-align: center;
-  margin-bottom: 70px;
-}
-
-.introduce_content h2 {
-  font-size: 50px;
-  font-weight: bold;
-  background: linear-gradient(90deg, #FF3333, #ec7532);
-  background-clip: text;
-  color: transparent;
-  margin-bottom: 20px;
-  line-height: 1.4;
-}
-
-.introduce_content p {
-  font-size: 18px;
+.introduce .text-center .titleP {
+  font-size: 20px;
   color: #444;
   line-height: 1.6;
-  font-weight: 400;
+  font-weight: 700;
+  margin-bottom: 30px;
 }
-
-.introduce_content button {
-  font-size: 0.8rem;
-  letter-spacing: 4px;
-  padding: 12px 24px;
-  margin-bottom: 50px;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  border-radius: 30px;
-  background: linear-gradient(to right, #FF3333, #ec7532, #FF3333);
-  color: white;
-  position: relative;
-  overflow: hidden;
-  animation: pulseButton 2s ease infinite;
+.introduce h5 {
+  font-size: 20px;
+  color: #444;
+  line-height: 1.6;
+  font-weight: 600;
+  margin-bottom: 30px;
 }
-
-@keyframes pulseButton {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+.introduce .text-center p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+  font-weight: 500;
+  margin-bottom: 30px;
 }
-
-.introduce_content button::before {
-  content: '';
-  width: 110%;
-  height: 100%;
-  background: linear-gradient(to right, #ec7532, #FF3333, #ec7532);
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: skew(30deg) translateX(-110%);
-  transition: all 0.5s ease;
-  z-index: 1;
-}
-
-.introduce_content button:hover::before {
-  transform: skew(30deg) translateX(-10px);
-}
-
-.introduce_content button span,
-.introduce_content button i {
-  z-index: 5;
-  position: relative;
-}
-
 /* Modal Video */
 .modal-content {
   border-radius: 10px;
@@ -368,26 +362,17 @@ header {
 }
 
 .modal-header {
-  background: linear-gradient(90deg, #9966FF, #FF66CC);
+  background: linear-gradient(90deg, #9966ff, #ff66cc);
   color: white;
 }
 
 .modal-body video {
   border-radius: 5px;
 }
-
 /* List Major */
 .list_major {
   text-align: center;
   margin-bottom: 70px;
-}
-
-.list_major h2 {
-  font-size: 50px;
-  font-weight: bold;
-  color: #1d1d1d;
-  margin-bottom: 20px;
-  line-height: 1.4;
 }
 
 .list_major p {
@@ -419,12 +404,12 @@ header {
 .list_major_content {
   text-align: left;
 }
-.list_major_item button  a{
+.list_major_item button a {
   text-decoration: none;
   color: white;
   font-weight: 500;
 }
-#allMajor{
+#allMajor {
   margin-bottom: 10px;
 }
 #allMajor a {
@@ -443,18 +428,10 @@ header {
   background-color: #ffffffd7;
 }
 
-.statistic h2, .bar-charts h2 {
-  font-size: 50px;
-  font-weight: bold;
-  color: #1d1d1d;
-  margin: 20px 0;
-  line-height: 1.4;
-}
-
 .statistic .counter {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #007bff;
+  color: black;
 }
 
 /* Bar Charts */
@@ -472,15 +449,6 @@ header {
 .news {
   overflow-x: hidden;
 }
-
-.news h2 {
-  font-size: 45px;
-  font-weight: bold;
-  color: #1d1d1d;
-  margin: 20px 0;
-  line-height: 1.4;
-}
-
 .news-card {
   border-radius: 10px;
   overflow: hidden;
@@ -541,7 +509,13 @@ button:hover {
   width: 100%;
   height: 400px;
 }
-
+footer h5 {
+  font-size: 20px;
+  color: white;
+  line-height: 1.6;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
 /* Animation Background */
 .animation {
   position: fixed;
@@ -571,16 +545,51 @@ button:hover {
   height: 80px;
 }
 
-.set div:nth-child(1) { left: 0%; animation: animate 15s linear infinite; }
-.set div:nth-child(2) { left: 10%; animation: animate 13s linear infinite; animation-delay: -7s; }
-.set div:nth-child(3) { left: 20%; animation: animate 11s linear infinite; }
-.set div:nth-child(4) { left: 30%; animation: animate 17s linear infinite; animation-delay: -5s; }
-.set div:nth-child(5) { left: 40%; animation: animate 20s linear infinite; }
-.set div:nth-child(6) { left: 50%; animation: animate 10s linear infinite; animation-delay: -10s; }
-.set div:nth-child(7) { left: 60%; animation: animate 30s linear infinite; }
-.set div:nth-child(8) { left: 70%; animation: animate 18s linear infinite; animation-delay: -8s; }
-.set div:nth-child(9) { left: 80%; animation: animate 9s linear infinite; }
-.set div:nth-child(10) { left: 90%; animation: animate 20s linear infinite; animation-delay: -3s; }
+.set div:nth-child(1) {
+  left: 0%;
+  animation: animate 15s linear infinite;
+}
+.set div:nth-child(2) {
+  left: 10%;
+  animation: animate 13s linear infinite;
+  animation-delay: -7s;
+}
+.set div:nth-child(3) {
+  left: 20%;
+  animation: animate 11s linear infinite;
+}
+.set div:nth-child(4) {
+  left: 30%;
+  animation: animate 17s linear infinite;
+  animation-delay: -5s;
+}
+.set div:nth-child(5) {
+  left: 40%;
+  animation: animate 20s linear infinite;
+}
+.set div:nth-child(6) {
+  left: 50%;
+  animation: animate 10s linear infinite;
+  animation-delay: -10s;
+}
+.set div:nth-child(7) {
+  left: 60%;
+  animation: animate 30s linear infinite;
+}
+.set div:nth-child(8) {
+  left: 70%;
+  animation: animate 18s linear infinite;
+  animation-delay: -8s;
+}
+.set div:nth-child(9) {
+  left: 80%;
+  animation: animate 9s linear infinite;
+}
+.set div:nth-child(10) {
+  left: 90%;
+  animation: animate 20s linear infinite;
+  animation-delay: -3s;
+}
 
 @keyframes animate {
   0% {
@@ -610,10 +619,31 @@ button:hover {
 }
 
 @keyframes rotate360 {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
+/* Hiệu ứng thu vào rồi phóng ra */
+@keyframes scaleInOut {
+  0% {
+    transform: scale(1);
+  } /* Bắt đầu với kích thước bình thường */
+  50% {
+    transform: scale(0.95);
+  } /* Thu nhỏ lại */
+  100% {
+    transform: scale(1);
+  } /* Phóng to lại về kích thước ban đầu */
+}
+.card_item {
+  animation: scaleInOut 3s ease-in-out infinite; /* Lặp lại hiệu ứng liên tục */
+}
+
+/* Responsive Design */
 @media (max-width: 1024px) {
   /* không hiển thị menu và đăng nhập  */
   .header_menu,
