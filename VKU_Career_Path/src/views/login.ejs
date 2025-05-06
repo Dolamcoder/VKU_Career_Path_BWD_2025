@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign in & Sign up Form</title>
+    <link rel="stylesheet" href="/css/login.css" />
+  </head>
+  <body>
+    <main>
+      <div class="box">
+        <div class="inner-box">
+          <div class="forms-wrap">
+            <form action="src/views/login.ejs" autocomplete="off" class="sign-in-form">
+              <div class="logo">
+                <a href="/"><img src="/img/logo-black-removebg.png" alt="VKU-Career-Path" /></a>
+                <h4>VKU Career Path</h4>
+              </div>
+
+              <div class="heading">
+                <h2>Chào Mừng !</h2>
+                <h6>Chưa có tài khoản ?</h6>
+                <a href="#" class="toggle">Đăng Ký</a>
+              </div>
+
+              <div class="actual-form">
+                <div class="input-wrap">
+                  <input
+                    type="text"
+                    minlength="4"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>Tên đăng nhập</label>
+                </div>
+
+                <div class="input-wrap">
+                  <input
+                    type="password"
+                    minlength="4"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>Mật khẩu</label>
+                </div>
+
+                <input type="submit" value="Đăng nhập" class="sign-btn" />
+
+                <p class="text">
+                  Bạn quên mật khẩu hoặc dữ liệu đăng nhập ?
+                  <a href="#">Trợ giúp</a> đăng nhập
+                </p>
+              </div>
+            </form>
+
+            <form action="index.html" autocomplete="off" class="sign-up-form">
+              <div class="logo">
+                <img src="./img/logo-black-removebg.png" alt="VKU-Career-Path" />
+                <h4>VKU Carerr Path</h4>
+              </div>
+
+              <div class="heading">
+                <h2>Bắt Đầu</h2>
+                <h6>Đã có tài khoản?</h6>
+                <a href="#" class="toggle">Đăng Nhập</a>
+              </div>
+
+              <div class="actual-form">
+                <div class="input-wrap">
+                  <input
+                    type="text"
+                    minlength="4"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>Tên đăng nhập</label>
+                </div>
+
+                <div class="input-wrap">
+                  <input
+                    type="email"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>Email</label>
+                </div>
+
+                <div class="input-wrap">
+                  <input
+                    type="password"
+                    minlength="4"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>Mật khẩu</label>
+                </div>
+
+                <input type="submit" value="Đăng Ký" class="sign-btn" />
+
+                <p class="text">
+                  Bằng cách đăng ký, tôi đồng ý với
+                  <a href="#">Điều khoản</a> và
+                  <a href="#">Chính sách</a>
+                </p>
+              </div>
+            </form>
+          </div>
+
+          <div class="carousel">
+            <div class="images-wrapper">
+              <img src="/img/img1.png" class="image img-1 show" alt="" />
+              <img src="/img/img2.png" class="image img-2" alt="" />
+              <img src="/img/img3.png" class="image img-3" alt="" />
+            </div>
+
+            <div class="text-slider">
+              <div class="text-wrap">
+                <div class="text-group">
+                  <h2>Định hướng nghề nghiệp cho sinh viên</h2>
+                  <h2>Gợi ý kỹ năng & hướng học phù hợp</h2>
+                  <h2>Không lạc hướng, không chọn sai</h2>
+                </div>
+              </div>
+
+              <div class="bullets">
+                <span class="active" data-value="1"></span>
+                <span data-value="2"></span>
+                <span data-value="3"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Javascript file -->
+
+    <script src="/JavaScript/login.js"></script>
+  </body>
+</html>
