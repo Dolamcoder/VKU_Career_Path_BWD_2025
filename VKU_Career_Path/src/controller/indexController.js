@@ -4,7 +4,11 @@ const getHome = (req, res) => {
 const getAdvise = (req, res) => {
     res.render('advise.ejs');
 }
+const getLogin = (req, res) => {
+    res.render('login.ejs');
+}
 module.exports = {
     getHome,
-    getAdvise
+    getAdvise,
+    getLogin
 }
