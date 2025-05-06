@@ -37,7 +37,7 @@ main {
   width: 100%;
   max-width: 1020px;
   height: 640px;
-  background-color: #fff;
+  background-color: #f9f0f0;
   border-radius: 3.3rem;
   box-shadow: 0 60px 40px -30px rgba(0, 0, 0, 0.27);
 }
@@ -105,22 +105,24 @@ form.sign-up-form {
 }
 
 .heading h2 {
-  font-size: 2.1rem;
+  font-size: 2.4rem;
   font-weight: 600;
   color: #151111;
+  
 }
 
 .heading h6 {
-  color: #bababa;
+  color: #282828;
   font-weight: 400;
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   display: inline;
+  
 }
 
 .toggle {
   color: #151111;
   text-decoration: none;
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   font-weight: 500;
   transition: 0.3s;
 }
@@ -145,7 +147,7 @@ form.sign-up-form {
   border-bottom: 1px solid #bbb;
   padding: 0;
   font-size: 0.95rem;
-  color: #151111;
+  color: #282828;
   transition: 0.4s;
 }
 
@@ -155,7 +157,7 @@ label {
   top: 50%;
   transform: translateY(-50%);
   font-size: 0.95rem;
-  color: #bbb;
+  color: #282828;
   pointer-events: none;
   transition: 0.4s;
 }
@@ -165,7 +167,7 @@ label {
 }
 
 .input-field.active + label {
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   top: -2px;
 }
 
@@ -188,13 +190,14 @@ label {
 }
 
 .text {
-  color: #bbb;
-  font-size: 0.7rem;
+  color: #282828;
+  font-size: 0.8rem;
 }
 
 .text a {
-  color: #bbb;
+  color: #282828;
   transition: 0.3s;
+  font-weight: bold;
 }
 
 .text a:hover {
@@ -225,7 +228,9 @@ main.sign-up-mode .carousel {
   width: 55%;
   left: 45%;
   top: 0;
-  background-color: #B2D9EA;
+  background: linear-gradient(90deg, #935dff, #ed75c5, #7272e9);
+  animation: gradientBG 12s ease infinite;
+  background-size: 200% 200%;
   border-radius: 2rem;
   display: grid;
   grid-template-rows: auto 1fr;
@@ -290,6 +295,7 @@ main.sign-up-mode .carousel {
   line-height: 2.2rem;
   font-weight: 600;
   font-size: 1.6rem;
+  color: #fff;
 }
 
 .bullets {
@@ -302,7 +308,7 @@ main.sign-up-mode .carousel {
   display: block;
   width: 0.5rem;
   height: 0.5rem;
-  background-color: #aaa;
+  background-color: #eddbdb;
   margin: 0 0.25rem;
   border-radius: 50%;
   cursor: pointer;
@@ -311,7 +317,7 @@ main.sign-up-mode .carousel {
 
 .bullets span.active {
   width: 1.1rem;
-  background-color: #151111;
+  background-color: #fff;
   border-radius: 1rem;
 }
 
@@ -328,6 +334,7 @@ main.sign-up-mode .carousel {
     width: revert;
     height: revert;
     padding: 2rem;
+    
   }
 
   .forms-wrap {
