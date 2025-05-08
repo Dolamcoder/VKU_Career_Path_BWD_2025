@@ -1,4 +1,5 @@
 const Account = require('../model/Account.js');
+const bcrypt = require('bcrypt');
 class AccountDao {
     async createAccount(accountData) {
         try {
@@ -32,20 +33,22 @@ class AccountDao {
             throw new Error(`Error updating account password: ${error.message}`);
         }
     }
-    async checkTaiKhoan(email, password) {
+     // Kiểm tra tài khoản (email và mật khẩu)
+     async checkTaiKhoan(email, password) {
         try {
-            const account = await Account.findOne({ email });
+            // Tìm tài khoản theo email
+            const account = await this.getAccountByEmail(email);
             if (!account) {
-                throw new Error('Account not found');
+                return null; // Không tìm thấy tài khoản
             }
-    
-            // So sánh mật khẩu plaintext với hash trong DB
-            const isMatch = await bcrypt.compare(password, account.password);
-            if (!isMatch) {
-                throw new Error('Invalid password');
+
+            // So sánh mật khẩu đã mã hóa
+            const isPasswordValid = await bcrypt.compare(password, account.password);
+            if (!isPasswordValid) {
+                return null; // Mật khẩu không hợp lệ
             }
-    
-            return account;
+
+            return account; // Trả về tài khoản nếu hợp lệ
         } catch (error) {
             throw new Error(`Error checking account: ${error.message}`);
         }
