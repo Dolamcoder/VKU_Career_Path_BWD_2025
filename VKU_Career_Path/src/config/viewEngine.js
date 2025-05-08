@@ -1,3 +1,4 @@
+// dùng để cấu hìn h view engine cho express
 const path= require('path')
 const express=require('express');
 const configViewEngine =(app) =>{
