@@ -14,7 +14,8 @@
       <div class="box">
         <div class="inner-box">
           <div class="forms-wrap">
-            <form action="src/views/login.ejs" autocomplete="off" class="sign-in-form">
+            <!-- Form đăng nhập -->
+            <form action="/login" method="POST" autocomplete="off" class="sign-in-form">
               <div class="logo">
                 <a href="/"><img src="/img/logo-black-removebg.png" alt="VKU-Career-Path" /></a>
                 <h4>VKU Career Path</h4>
@@ -29,13 +30,13 @@
               <div class="actual-form">
                 <div class="input-wrap">
                   <input
-                    type="text"
-                    minlength="4"
+                    type="email"
                     class="input-field"
                     autocomplete="off"
                     required
+                    name="email"
                   />
-                  <label>Tên đăng nhập</label>
+                  <label>Email</label>
                 </div>
 
                 <div class="input-wrap">
@@ -45,6 +46,7 @@
                     class="input-field"
                     autocomplete="off"
                     required
+                    name="password"
                   />
                   <label>Mật khẩu</label>
                 </div>
@@ -58,7 +60,8 @@
               </div>
             </form>
 
-            <form action="index.html" autocomplete="off" class="sign-up-form">
+            <!-- Form đăng ký -->
+            <form action="/regester" method="POST" autocomplete="off" class="sign-up-form">
               <div class="logo">
                 <a href="/"><img src="/img/logo-black-removebg.png" alt="VKU-Career-Path" /></a>
                 <h4>VKU Career Path</h4>
@@ -78,6 +81,7 @@
                     class="input-field"
                     autocomplete="off"
                     required
+                    name="name"
                   />
                   <label>Tên đăng nhập</label>
                 </div>
@@ -88,6 +92,7 @@
                     class="input-field"
                     autocomplete="off"
                     required
+                    name="email"
                   />
                   <label>Email</label>
                 </div>
@@ -99,6 +104,7 @@
                     class="input-field"
                     autocomplete="off"
                     required
+                    name="password"
                   />
                   <label>Mật khẩu</label>
                 </div>
@@ -129,7 +135,6 @@
               <div class="text-wrap">
                 <div class="text-group">
                   <h2>Định hướng nghề nghiệp cho sinh viên</h2>
-                  <h2>Định hướng nghề nghiệp</h2>
                   <h2>Gợi ý kỹ năng & hướng học phù hợp</h2>
                   <h2>Không lạc hướng, không chọn sai</h2>
                 </div>
@@ -147,7 +152,6 @@
     </main>
 
     <!-- Javascript file -->
-
     <script src="/JavaScript/login.js"></script>
   </body>
 </html>
