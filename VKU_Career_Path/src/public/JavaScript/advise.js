@@ -204,7 +204,9 @@ const questions = [
         type: "choice",
         options: [
             { text: "Việt Nam", value: "vietnam" },
-            { text: "Nước ngoài", value: "abroad" }
+            { text: "Nước ngoài", value: "abroad" },
+            { text: "Không biet", value: "unknown" },
+            { text: "Không quan tài", value: "not_sure" }
         ]
     },
     {
