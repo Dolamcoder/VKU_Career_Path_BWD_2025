@@ -14,6 +14,7 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/css/advise.css">
+
 </head>
 
 <body>
@@ -99,14 +100,40 @@
     <!-- hiển thị bước -->
     <div class="stepper-container container mt-5">
         <div class="stepper d-flex justify-content-between mb-4">
-            <div class="step" onclick="goToStep(1)">1<br><span>Giới thiệu</span></div>
-            <div class="step" onclick="goToStep(2)">2<br><span>Trắc nghiệm</span></div>
-            <div class="step" onclick="goToStep(3)">3<br><span>Tư vấn chuyên gia</span></div>
-            <div class="step" onclick="goToStep(4)">4<br><span>So sánh ngành</span></div>
-            <div class="step" onclick="goToStep(5)">5<br><span>Kết quả</span></div>
-            <div class="step" onclick="goToStep(6)">6<br><span>Đánh giá</span></div>
+            <div class="step" onclick="goToStep(1)">
+                <span class="step-number">1</span>
+                <span class="step-label">Giới thiệu</span>
+                <i class="fa fa-blind"></i>
+            </div>
+            <div class="step" onclick="goToStep(2)">
+                <span class="step-number">2</span>
+                <span class="step-label">Trắc nghiệm</span>
+                <i class="fa fa-file-contract"></i>
+            </div>
+            <div class="step" onclick="goToStep(3)">
+                <span class="step-number">3</span>
+                <span class="step-label">Tư vấn chuyên gia</span>
+                <i class="fa fa-hands-helping"></i>
+            </div>
+            <div class="step" onclick="goToStep(4)">
+                <span class="step-number">4</span>
+                <span class="step-label">So sánh ngành</span>
+                <i class="fa fa-exchange-alt"></i>
+            </div>
+            <div class="step" onclick="goToStep(5)">
+                <span class="step-number">5</span>
+                <span class="step-label">Kết quả</span>
+                <i class="fa fa-clipboard-check"></i>
+            </div>
+            <div class="step" onclick="goToStep(6)">
+                <span class="step-number">6</span>
+                <span class="step-label">Đánh giá</span>
+                <i class="fa fa-star"></i>
+            </div>
         </div>
     </div>
+    
+    
 
     <!-- nội dung b1 -->
     <div class="container">
@@ -614,5 +641,4 @@
     <script src="/JavaScript/advise.js"></script>
     <script src="/JavaScript/header.js"></script>
 </body>
-
 </html>
