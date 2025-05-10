@@ -8,6 +8,11 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
 body,
 input {
   font-family: "Poppins", sans-serif;
@@ -326,15 +331,15 @@ main.sign-up-mode .carousel {
     height: auto;
     max-width: 550px;
     overflow: hidden;
+    margin: 1rem;
   }
 
   .inner-box {
     position: static;
     transform: none;
-    width: revert;
-    height: revert;
-    padding: 2rem;
-    
+    width: 100%;
+    height: auto;
+    padding: 1.5rem;
   }
 
   .forms-wrap {
@@ -384,15 +389,16 @@ main.sign-up-mode .carousel {
 
 @media (max-width: 530px) {
   main {
-    padding: 1rem;
+    padding: 0.5rem;
   }
 
   .box {
-    border-radius: 2rem;
+    border-radius: 1.5rem;
+    margin: 0.5rem;
   }
 
   .inner-box {
-    padding: 1rem;
+    padding: 0.8rem;
   }
 
   .carousel {
