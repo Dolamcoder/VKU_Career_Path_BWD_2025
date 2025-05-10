@@ -14,6 +14,8 @@ function goToStep(step) {
     }
 }
 
+
+
 // object câu hỏi b2
 const questions = [
     {

@@ -294,7 +294,9 @@ header {
   .avartar {
     display: none;
   }
- /* >>>>>>> */
+
+
+ /* Stepper */
 .stepper-container {
     max-width: 900px;
 }
@@ -328,6 +330,34 @@ header {
 
 .step-content.active {
     display: block;
+}
+
+
+/* Mặc định */
+.step .step-number {
+  display: inline-block; /* hiện số */
+}
+
+.step .step-label {
+  display: inline-block; /*hiện chữ */
+}
+
+.step i{
+  display: none;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .step .step-number,
+  .step .step-label {
+    display: none !important; 
+  }
+
+  .step i {
+    display: inline-block !important;
+    font-size: 25px;
+  }
+
 }
 
 /* Career Guidance Styles */
