@@ -18,7 +18,7 @@ body {
 }
 
 section {
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
   padding: 30px 0;
   background-color: rgba(255, 255, 255, 0.95);
 }
@@ -201,6 +201,7 @@ header {
 .logIn_signUp button {
   margin-right: 10px;
   border: none;
+  outline: none;
   border-radius: 20px;
   background-color: #3399ff;
   padding: 10px 20px;
@@ -372,7 +373,6 @@ header {
 /* List Major */
 .list_major {
   text-align: center;
-  margin-bottom: 70px;
 }
 
 .list_major p {
