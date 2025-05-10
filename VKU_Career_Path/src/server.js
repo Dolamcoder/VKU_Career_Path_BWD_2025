@@ -1,14 +1,28 @@
-require('dotenv').config();
 const express = require('express');
 const app = express();
-const path=require('path');
-const port =process.env.port || 3000;
-const host_name=process.env.host_name;
-const configViewEngine=require('./config/viewEngine');
+const path = require('path');
+const connectDB = require('./config/connectDB');
+const port = process.env.PORT || 3000;
+const host_name = process.env.HOST_NAME || 'localhost';
+const configViewEngine = require('./config/viewEngine');
 const webRoute = require('./routes/web');
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 configViewEngine(app);
-//khai bao router
 app.use('/', webRoute);
-app.listen(port, host_name, () => {
-  console.log(`Example app listening on port ${port}`)
-});
+
+async function startServer() {
+    try {
+        await connectDB();
+        console.log('Database connection established');
+        app.listen(port, host_name, () => {
+            console.log(`Example app listening on ${host_name}:${port}`);
+        });
+    } catch (error) {
+        console.error('Failed to start server:', error);
+        process.exit(1);
+    }
+}
+
+startServer();
