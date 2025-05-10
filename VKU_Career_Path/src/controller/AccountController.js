@@ -33,25 +33,27 @@ const createAccount = async (req, res) => {
 };
 const loginAccount = async (req, res) => {
     try {
-        const { email, password } = req.body;
-
-        // Kiểm tra các trường bắt buộc
-        if (!email || !password) {
-            return res.status(400).json({ error: 'Email and password are required' });
-        }
-
-        // Kiểm tra tài khoản và mật khẩu
-        const account = await accountDao.checkTaiKhoan(email, password);
-        if (!account) {
-            return res.status(401).json({ error: 'Email hoặc mật khẩu không hợp lệ' });
-        }
-        // Đăng nhập thành công
-        return res.render('index.ejs', { message: `Đăng nhập thành công, Xin chào ${account.name}`, account });
+      const { email, password } = req.body;
+  
+      // Kiểm tra các trường bắt buộc
+      if (!email || !password) {
+        return res.status(400).json({ error: "Email và Password không được để trống" });
+      }
+  
+      // Kiểm tra tài khoản và mật khẩu
+      const account = await accountDao.checkTaiKhoan(email, password);
+      if (!account) {
+        return res.status(401).json({ error: "Email hoặc password không hợp lệ" });
+      }
+  
+      // Đăng nhập thành công, return JSON with username
+      req.session.user = { name: account.name }; // Optional: Store user in session
+      return res.status(200).json({ name: account.name });
     } catch (error) {
-        console.error('Error in loginAccount:', error);
-        return res.status(500).json({ error: 'Internal server error' });
+      console.error("Error in loginAccount:", error);
+      return res.status(500).json({ error: "Internal server error" });
     }
-};
+  };
 const getAccountByEmail = async (req, res) => {
     try {
         const { email } = req.body;

@@ -201,6 +201,7 @@ header {
 .logIn_signUp button {
   margin-right: 10px;
   border: none;
+  outline: none;
   border-radius: 20px;
   background-color: #3399ff;
   padding: 10px 20px;
