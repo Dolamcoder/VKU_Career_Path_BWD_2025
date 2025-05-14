@@ -62,7 +62,7 @@
               </div>
             </form>
             <!-- Form đăng ký -->
-            <form action="/regester" method="POST" autocomplete="off" class="sign-up-form">
+          <form action="/register" method="POST" autocomplete="off" class="sign-up-form">
               <div class="logo">
                 <a href="/"><img src="/img/logo-black-removebg.png" alt="VKU-Career-Path" /></a>
                 <h4>VKU Career Path</h4>
@@ -109,9 +109,18 @@
                   />
                   <label>Mật khẩu</label>
                 </div>
-
-                <input type="submit" value="Đăng Ký" class="sign-btn" />
-
+                <div class="input-wrap">
+                  <input
+                    type="password"
+                    minlength="4"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                    name="passwordConfirm"
+                  />
+                  <label>Xác nhận mật khẩu</label>
+                </div>
+                <input type="submit" value="Đăng Ký" class="sign-btn" id="submitRegister"/>
                 <p class="text">
                   Bằng cách đăng ký, tôi đồng ý với
                   <a href="#">Điều khoản</a> và
@@ -154,5 +163,6 @@
 
     <!-- Javascript file -->
     <script src="/JavaScript/login.js"></script>
+    <script src="/JavaScript/ClientAccount.js"></script>
   </body>
 </html>

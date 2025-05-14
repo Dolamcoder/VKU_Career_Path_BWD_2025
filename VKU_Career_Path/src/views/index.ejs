@@ -20,7 +20,8 @@
 <body>
   <!-- Facebook SDK -->
   <div id="fb-root"></div>
-  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v18.0" nonce="random_nonce"></script>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v18.0"
+    nonce="random_nonce"></script>
   <!-- Header -->
   <header id="mainHeader">
     <div class="header_logo">
@@ -55,10 +56,17 @@
       </ul>
     </div>
     <div class="logIn_signUp">
-      <button><a href="/login"><i class="fa fa-user"></i><span> Đăng nhập</span></a></button>
+      <button id="loginButton">
+        <a href="/login"><i class="fa fa-user"></i><span> Đăng nhập</span></a>
+      </button>
     </div>
     <div class="avartar">
-      <img src="" alt="Avatar">
+      <button class="avartarButton"><img src="/img/avartar.jpg" alt=""></button>
+      <div class="dropdown-content dropdownMenuAvartar">
+        <a href="#">Trang cá nhân</a>
+        <a href="/login" class="logout">Đăng xuất</a>
+      </div>
+      <span class="userName" data-name="<%= user ? user.name : '' %>"></span>
     </div>
   </header>
   <header id="scroll">
@@ -94,10 +102,17 @@
       </ul>
     </div>
     <div class="logIn_signUp">
-      <button><a href="/login"><i class="fa fa-user"></i><span> Đăng nhập</span></a></button>
+      <button id="loginButton">
+        <a href="/login"><i class="fa fa-user"></i><span> Đăng nhập</span></a>
+      </button>
     </div>
     <div class="avartar">
-      <img src="" alt="Avatar">
+      <button class="avartarButton"><img src="/img/avartar.jpg" alt=""></button>
+      <div class="dropdown-content dropdownMenuAvartar">
+        <a href="#">Trang cá nhân</a>
+        <a href="/login" class="logout">Đăng xuất</a>
+      </div>
+      <span class="userName" data-name="<%= user ? user.name : '' %>"></span>
     </div>
   </header>
   <!-- Introduce Section -->
@@ -357,7 +372,7 @@
       </div>
     </div>
   </section>
-  
+
   <section class="info-school">
     <div class="container">
       <div class="row">
@@ -368,27 +383,15 @@
             referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="col-md-4">
-          <div class="fb-page" 
-            data-href="https://www.facebook.com/vku.udn.vn" 
-            data-tabs="timeline,events,messages"
-            data-width="500" 
-            data-height="450" 
-            data-small-header="false" 
-            data-adapt-container-width="true" 
-            data-hide-cover="false" 
-            data-show-facepile="true">
+          <div class="fb-page" data-href="https://www.facebook.com/vku.udn.vn" data-tabs="timeline,events,messages"
+            data-width="500" data-height="450" data-small-header="false" data-adapt-container-width="true"
+            data-hide-cover="false" data-show-facepile="true">
           </div>
         </div>
         <div class="col-md-4">
-          <div class="fb-page" 
-            data-href="https://www.facebook.com/cs.vku.udn.vn" 
-            data-tabs="timeline,events,messages"
-            data-width="500" 
-            data-height="450" 
-            data-small-header="false" 
-            data-adapt-container-width="true" 
-            data-hide-cover="false" 
-            data-show-facepile="true">
+          <div class="fb-page" data-href="https://www.facebook.com/cs.vku.udn.vn" data-tabs="timeline,events,messages"
+            data-width="500" data-height="450" data-small-header="false" data-adapt-container-width="true"
+            data-hide-cover="false" data-show-facepile="true">
           </div>
         </div>
       </div>
@@ -503,5 +506,8 @@
   <script src="/JavaScript/chart.js"></script>
   <script src="/JavaScript/effect.js"></script>
   <script src="/JavaScript/header.js"></script>
+  <script src="/JavaScript/checkStatuslogin.js"></script>
+  <script src="/JavaScript/avartar.js"></script>
 </body>
+
 </html>
