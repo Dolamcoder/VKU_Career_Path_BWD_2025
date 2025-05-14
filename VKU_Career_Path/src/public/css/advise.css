@@ -350,27 +350,57 @@ header {
   display: none;
 }
 
-/* Mobile */
-@media (max-width: 767px) {
-  .step .step-number,
-  .step .step-label {
-    display: none !important; 
+@media (max-width: 555px) {
+  .header_bar {
+    display: block !important;
   }
-
-  .step i {
-    display: inline-block !important;
-    font-size: 25px;
-  }
-
-}
-
-@media (max-width: 700px) {
-  .header_logo span {
+  .header_menu {
     display: none;
   }
+  .header_logo a {
+    font-size: 1.5rem;
+  }
+  .avartar {
+    display: none !important;
+  }
+  .logIn_signUp {
+    display: none ! important;
+  }
+  .header_logo img {
+    width: 60px;
+  }
 }
 
-
+@media (min-width:555.2px) and (max-width: 962px) {
+  .header_bar {
+    display: block;
+    margin-left: auto;
+    margin-right: 30px;
+  }
+  .header_menu {
+    display: none ;
+  }
+  .header_logo a {
+    font-size: 1.5rem;
+  }
+  .header_logo img {
+    width: 60px;
+  }
+}
+@media (min-width: 962.1px) and (max-width: 1200px) {
+  .header_bar {
+    display: none !important;
+  }
+  .header_menu {
+    display: flex;
+  }
+  .header_logo a span {
+    display: none !important;
+  }
+  .header_logo img {
+    width: 60px;
+  }
+}
 /* Career Guidance Styles */
 .progress-bar {
     height: 6px;
@@ -580,8 +610,7 @@ footer {
   overflow: hidden;
   background-color: #212529;
   color: white;
-  padding-top: 3rem;
-  padding-bottom: 1rem;
+  padding: 10px 0;
 }
 
 footer .container {
@@ -634,7 +663,7 @@ footer .btn-outline-light {
 }
 
 footer hr {
-  margin: 30px 0;
+  margin: 10px 0;
   border-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -684,24 +713,4 @@ footer .hover-opacity:hover {
   footer ul li {
     text-align: left;
   }
-}
-
-@media (max-width: 1024px) {
-    /* không hiển thị menu và đăng nhập  */
-    .header_menu,
-    .logIn_signUp {
-      display: none;
-    }
-    .header_bar {
-      display: flex;
-    }
-    .header_logo a {
-      font-size: 1.2rem;
-    }
-    .header_logo img {
-      width: 50px;
-    }
-    .introduce_content {
-      width: 95%;
-    }
 }

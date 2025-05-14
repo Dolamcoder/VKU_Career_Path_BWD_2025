@@ -14,7 +14,7 @@ logouts.forEach((logout) => {
       .then(response => {
         if (response.ok) {
           // Chuyển hướng về trang chủ sau khi đăng xuất thành công
-          window.location.href = '/login';
+          window.location.href = '/';
         } else {  
           alert('Đăng xuất thất bại. Vui lòng thử lại.');
         }
