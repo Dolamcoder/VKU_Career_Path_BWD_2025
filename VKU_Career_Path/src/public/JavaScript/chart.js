@@ -42,11 +42,11 @@ const createCharts = () => {
   chartInstances.studentsBarChart = new Chart(document.getElementById('studentsBarChart'), {
     type: 'bar',
     data: {
-      labels: ['Khoa Học Máy Tính', 'Kỹ Thuật Máy tính', 'Công nghệ truyền thông', 'Kinh tế'],
+      labels: ['Khoa Học Máy Tính', 'Kỹ Thuật Máy tính', 'Kinh tế số&TMĐT'],
       datasets: [{
         label: 'Số lượng',
         data: [5000, 11500, 12516, 51156],
-        backgroundColor: ['#17a2b8', '#e83e8c', '#28a745', '#dc3545'],
+        backgroundColor: ['#17a2b8', '#e83e8c', '#dc3545'],
         borderRadius: 5
       }]
     },

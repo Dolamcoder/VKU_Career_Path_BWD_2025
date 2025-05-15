@@ -48,7 +48,7 @@ function autoSlide() {
   moveSlider(currentIndex);
 }
 
-let slideInterval = setInterval(autoSlide, 3500); // Slide every 8 seconds
+let slideInterval = setInterval(autoSlide, 3000); // Slide every 8 seconds
 
 // Optional: Pause auto-slide on hover and resume on mouse leave
 const carousel = document.querySelector(".carousel");
