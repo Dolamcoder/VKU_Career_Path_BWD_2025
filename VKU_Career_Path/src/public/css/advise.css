@@ -350,27 +350,57 @@ header {
   display: none;
 }
 
-/* Mobile */
-@media (max-width: 767px) {
-  .step .step-number,
-  .step .step-label {
-    display: none !important; 
+@media (max-width: 555px) {
+  .header_bar {
+    display: block !important;
   }
-
-  .step i {
-    display: inline-block !important;
-    font-size: 25px;
-  }
-
-}
-
-@media (max-width: 700px) {
-  .header_logo span {
+  .header_menu {
     display: none;
   }
+  .header_logo a {
+    font-size: 1.5rem;
+  }
+  .avartar {
+    display: none !important;
+  }
+  .logIn_signUp {
+    display: none ! important;
+  }
+  .header_logo img {
+    width: 60px;
+  }
 }
 
-
+@media (min-width:555.2px) and (max-width: 962px) {
+  .header_bar {
+    display: block;
+    margin-left: auto;
+    margin-right: 30px;
+  }
+  .header_menu {
+    display: none ;
+  }
+  .header_logo a {
+    font-size: 1.5rem;
+  }
+  .header_logo img {
+    width: 60px;
+  }
+}
+@media (min-width: 962.1px) and (max-width: 1200px) {
+  .header_bar {
+    display: none !important;
+  }
+  .header_menu {
+    display: flex;
+  }
+  .header_logo a span {
+    display: none !important;
+  }
+  .header_logo img {
+    width: 60px;
+  }
+}
 /* Career Guidance Styles */
 .progress-bar {
     height: 6px;
@@ -527,7 +557,52 @@ header {
     padding: 40px 0;
     background-color: white;
 }
-
+ /* Avartar */
+ .avartar {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30px;
+}
+.avartar button {
+  background: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-right: 12px;
+}
+.avartar button img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.userName {
+  font-size: 1rem;
+  color: white;
+  font-weight: bold;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  top: 100%;
+  right: 0;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
 /* Footer Styles */
 footer {
   position: relative;
@@ -535,8 +610,7 @@ footer {
   overflow: hidden;
   background-color: #212529;
   color: white;
-  padding-top: 3rem;
-  padding-bottom: 1rem;
+  padding: 10px 0;
 }
 
 footer .container {
@@ -589,7 +663,7 @@ footer .btn-outline-light {
 }
 
 footer hr {
-  margin: 30px 0;
+  margin: 10px 0;
   border-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -639,24 +713,4 @@ footer .hover-opacity:hover {
   footer ul li {
     text-align: left;
   }
-}
-
-@media (max-width: 1024px) {
-    /* không hiển thị menu và đăng nhập  */
-    .header_menu,
-    .logIn_signUp {
-      display: none;
-    }
-    .header_bar {
-      display: flex;
-    }
-    .header_logo a {
-      font-size: 1.2rem;
-    }
-    .header_logo img {
-      width: 50px;
-    }
-    .introduce_content {
-      width: 95%;
-    }
 }

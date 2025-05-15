@@ -14,12 +14,13 @@ class AccountDao {
     }
 
     async getAccountByEmail(email) {
-        try {
-            return await Account.findOne({ email });
-        } catch (error) {
-            throw new Error(`Error fetching account by email: ${error.message}`);
-        }
+    try {
+        const account = await Account.findOne({ email });
+        return account || null; // Trả về null nếu không tìm thấy tài khoản
+    } catch (error) {
+        throw new Error(`Error fetching account by email: ${error.message}`);
     }
+}
 
     async updateAccountPasswordByEmail(email, newPassword) {
         try {

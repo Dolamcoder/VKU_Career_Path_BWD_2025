@@ -16,11 +16,11 @@
 
   <link rel="stylesheet" href="/css/index.css">
 </head>
-
 <body>
   <!-- Facebook SDK -->
   <div id="fb-root"></div>
-  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v18.0" nonce="random_nonce"></script>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v18.0"
+    nonce="random_nonce"></script>
   <!-- Header -->
   <header id="mainHeader">
     <div class="header_logo">
@@ -55,10 +55,17 @@
       </ul>
     </div>
     <div class="logIn_signUp">
-      <button><a href="/login"><i class="fa fa-user"></i><span> Đăng nhập</span></a></button>
+      <button id="loginButton">
+        <a href="/login"><i class="fa fa-user"></i><span> Đăng nhập</span></a>
+      </button>
     </div>
     <div class="avartar">
-      <img src="" alt="Avatar">
+      <button class="avartarButton"><img src="/img/avartar.jpg" alt=""></button>
+      <div class="dropdown-content dropdownMenuAvartar">
+        <a href="#">Trang cá nhân</a>
+        <a href="/login" class="logout">Đăng xuất</a>
+      </div>
+      <span class="userName" data-name="<%= user ? user.name : '' %>"></span>
     </div>
   </header>
   <header id="scroll">
@@ -94,10 +101,17 @@
       </ul>
     </div>
     <div class="logIn_signUp">
-      <button><a href="/login"><i class="fa fa-user"></i><span> Đăng nhập</span></a></button>
+      <button id="loginButton">
+        <a href="/login"><i class="fa fa-user"></i><span> Đăng nhập</span></a>
+      </button>
     </div>
     <div class="avartar">
-      <img src="" alt="Avatar">
+      <button class="avartarButton"><img src="/img/avartar.jpg" alt=""></button>
+      <div class="dropdown-content dropdownMenuAvartar">
+        <a href="#">Trang cá nhân</a>
+        <a href="/login" class="logout">Đăng xuất</a>
+      </div>
+      <span class="userName" data-name="<%= user ? user.name : '' %>"></span>
     </div>
   </header>
   <!-- Introduce Section -->
@@ -176,7 +190,6 @@
       nguyên số.</p>
     <div class="container">
       <div class="list_major_content">
-        <button id="allMajor" data-aos="fade-up"><a href="#">Xem tất cả <i class="fa fa-arrow-right"></i></a></button>
         <div class="row">
           <div class="col-md-4 mb-4 list_major_item" data-aos="fade-up">
             <img class="img-fluid w-100" src="/img/CNTT.jpg" alt="Công Nghệ Thông Tin">
@@ -211,8 +224,44 @@
         </div>
       </div>
     </div>
+    <div class="container hidden_major">
+      <div class="list_major_content">
+        <div class="row">
+          <div class="col-md-4 mb-4 list_major_item" data-aos="fade-up">
+            <img class="img-fluid w-100" src="/img/CNTT.jpg" alt="Công Nghệ Thông Tin">
+            <h3 class="mt-2">Công Nghệ Thông Tin</h3>
+            <button><a href="#">Xem chi tiết</a></button>
+          </div>
+          <div class="col-md-4 mb-4 list_major_item" data-aos="fade-up">
+            <img class="img-fluid w-100" src="/img/ThietKeViMach.jpg" alt="Thiết Kế Vi Mạch">
+            <h3 class="mt-2">Thiết Kế Vi Mạch</h3>
+            <button><a href="#">Xem chi tiết</a></button>
+          </div>
+          <div class="col-md-4 mb-4 list_major_item" data-aos="fade-up">
+            <img class="img-fluid w-100" src="/img/marketTing.jpg" alt="Marketing">
+            <h3 class="mt-2">Marketing</h3>
+            <button><a href="#">Xem chi tiết</a></button>
+          </div>
+          <div class="col-md-4 mb-4 list_major_item" data-aos="fade-up">
+            <img class="img-fluid w-100" src="/img/triTueNhanTao.jpg" alt="Trí Tuệ Nhân Tạo">
+            <h3 class="mt-2">Trí Tuệ Nhân Tạo</h3>
+            <button><a href="#">Xem chi tiết</a></button>
+          </div>
+          <div class="col-md-4 mb-4 list_major_item" data-aos="fade-up">
+            <img class="img-fluid w-100" src="/img/anToanThongTin.jpg" alt="An Toàn Thông Tin">
+            <h3 class="mt-2">An Toàn Thông Tin</h3>
+            <button><a href="#">Xem chi tiết</a></button>
+          </div>
+          <div class="col-md-4 mb-4 list_major_item" data-aos="fade-up">
+            <img class="img-fluid w-100" src="/img/congNgheGame.jpg" alt="Công Nghệ Game">
+            <h3 class="mt-2">Công Nghệ Game</h3>
+            <button><a href="#">Xem chi tiết</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button id="allMajor" data-aos="fade-up">Xem thêm <i class="fa fa-angle-double-down"></i></button>
   </section>
-
   <!-- Statistic Section -->
   <section class="statistic section">
     <div class="container text-center">
@@ -223,7 +272,7 @@
           <p>Ngành đào tạo</p>
         </div>
         <div class="col-md-3 col-6 mb-4">
-          <h3 class="counter" data-target="7000 "><span>+</span></h3>
+          <h3 class="counter" data-target="7000">0</h3>
           <p>Sinh viên đang học</p>
         </div>
         <div class="col-md-3 col-6 mb-4">
@@ -357,7 +406,7 @@
       </div>
     </div>
   </section>
-  
+
   <section class="info-school">
     <div class="container">
       <div class="row">
@@ -443,7 +492,6 @@
             </li>
           </ul>
         </div>
-
         <!-- Kết nối -->
         <div class="col-md-3">
           <h5 class="fw-bold mb-3">🌐 Kết nối với chúng tôi</h5>
@@ -460,7 +508,7 @@
         </div>
       </div>
 
-      <hr class="border-secondary mt-5">
+      <hr class="border-secondary mt-0">
 
       <div class="text-center text-white-50 mt-3 small">
         <p>© 2025 Trường Đại học Công nghệ Thông tin và Truyền thông Việt - Hàn. Dù bạn là ai, bạn ở nơi nào
@@ -470,23 +518,9 @@
     </div>
   </footer>
   <!-- Animation Background -->
-  <section class="animation">
-    <div class="set">
-      <div><img src="/img/background.png" alt="Star"></div>
-      <div><img src="/img/background.png" alt="Leaf"></div>
-      <div><img src="/img/background.png" alt="Flower"></div>
-      <div><img src="/img/background.png" alt="Star"></div>
-      <div><img src="/img/background.png" alt="Leaf"></div>
-      <div><img src="/img/background.png" alt="Flower"></div>
-      <div><img src="/img/background.png" alt="Star"></div>
-      <div><img src="/img/background.png" alt="Leaf"></div>
-      <div><img src="/img/background.png" alt="Flower"></div>
-      <div><img src="/img/background.png" alt="Leaf"></div>
-    </div>
-  </section>
   <!-- Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -503,5 +537,7 @@
   <script src="/JavaScript/chart.js"></script>
   <script src="/JavaScript/effect.js"></script>
   <script src="/JavaScript/header.js"></script>
+  <script src="/JavaScript/checkStatuslogin.js"></script>
+  <script src="/JavaScript/avartar.js"></script>
 </body>
 </html>
