@@ -24,38 +24,38 @@
             <a href="#"><img src="/img/logon-removebg-preview.png" alt="VKU Logo"><span>VKU Career Path</span></a>
         </div>
         <div class="header_bar">
-            <button id="menuMobile" class="menu_mobile_button"><i class="fa fa-bars"></i></button>
-            <div class="menu_mobile" id="menu_mobile">
+            <button id="menuMobile" class="menu_mobile_button" aria-label="Menu"><i class="fa fa-bars"></i></button>
+            <div class="menu_mobile" id="menu_mobile" role="dialog" aria-modal="true">
                 <div class="menu_mobile_header">
                     <div class="menu_mobile_logo">
                         <a href="#"><img src="/img/logon-removebg-preview.png" alt="VKU Logo"><span>VKU Career Path</span></a>
                     </div>
-                    <button id="closeMenuMobile" class="menu_mobile_close"><i class="fa fa-times"></i></button>
+                    <button id="closeMenuMobile" class="menu_mobile_close" aria-label="Đóng menu"><i class="fa fa-times"></i></button>
                 </div>
-                <div class="menu_mobile_item">
+                <nav class="menu_mobile_item">
                     <li class="active"><a href="#">Trang chủ</a></li>
                     <li><a href="#">Tư vấn ngành</a></li>
                     <li><a href="#">Mô tả ngành</a></li>
                     <li><a href="#">Lộ trình học tập</a></li>
                     <li><a href="#">Cộng đồng</a></li>
                     <li><a href="#">Đăng nhập</a></li>
-                </div>
+                </nav>
             </div>
         </div>
-        <div class="header_menu">
+        <nav class="header_menu" role="navigation" aria-label="Menu chính">
             <ul>
                 <li><a href="/">Trang chủ</a></li>
-                <li class="active"><a href="/advise">Tư vấn ngành</a></li>
+                <li class="active"><a href="/advise" aria-current="page">Tư vấn ngành</a></li>
                 <li><a href="#">Mô tả ngành</a></li>
                 <li><a href="#">Lộ trình học tập</a></li>
                 <li><a href="#">Cộng đồng</a></li>
             </ul>
-        </div>
+        </nav>
         <div class="logIn_signUp">
             <button><a href="/login"><i class="fa fa-user"></i><span> Đăng nhập</span></a></button>
         </div>
         <div class="avartar">
-            <img src="" alt="Avatar">
+            <img src="" alt="Avatar người dùng">
         </div>
     </header>
     <header id="scroll">
@@ -98,7 +98,7 @@
         </div>
     </header>
     <!-- hiển thị bước -->
-    <div class="stepper-container container mt-5">
+    <section class="stepper-container container mt-5" role="navigation" aria-label="Các bước tư vấn">
         <div class="stepper d-flex justify-content-between mb-4">
             <div class="step" onclick="goToStep(1)">
                 <span class="step-number">1</span>
@@ -131,14 +131,14 @@
                 <i class="fa fa-star"></i>
             </div>
         </div>
-    </div>
+    </section>
     
     
 
     <!-- nội dung b1 -->
-    <div class="container">
-        <div id="step-1" class="step-content active">
-            <div class="card p-4 shadow">
+    <section class="container">
+        <article id="step-1" class="step-content active" role="tabpanel" aria-labelledby="step1-tab">
+            <section class="card p-4 shadow">
                 <h2 class="text-primary font-weight-bold mb-3">GIỚI THIỆU TRẮC NGHIỆM</h2>
                 <p><strong>Bài trắc nghiệm này sẽ giúp bạn khám phá ngành học phù hợp dựa trên mô hình MBTI, Holland
                         Code và các khung tâm lý học nghề nghiệp.</strong></p>
@@ -159,12 +159,12 @@
                 </ol>
                 <p><strong>Lưu ý:</strong> Kết quả chỉ mang tính chất tham khảo, bạn nên kết hợp với tư vấn từ chuyên
                     gia để có quyết định chính xác nhất về ngành học.</p>
-            </div>
-        </div>
+            </section>
+        </article>
 
         <!-- bước 2 -->
-        <div id="step-2" class="step-content">
-            <div class="test-container">
+        <article id="step-2" class="step-content" role="tabpanel" aria-labelledby="step2-tab">
+            <section class="test-container">
                 <!-- giới thiệu b2 -->
                 <div id="test-intro" class="test-intro mb-4">
                     <div class="text-center">
@@ -190,32 +190,30 @@
 
                 <!-- câu hỏi -->
                 <div id="test-questions" class="test-questions hidden mb-4">
-                    <div class="flex justify-between items-center mb-6">
-                        <div class="text-sm text-gray-500">
-                            <!-- số lượng câu hỏi hiển thị ở đây (vd: câu hỏi 1/10)-->
-                            <span id="current-question">
+                    <div id="holland-stepper" class="mb-6"></div>
+                    <div id="holland-group-title" class="mb-2 text-2xl font-bold text-blue-800"></div>
+                    <div id="holland-group-desc" class="mb-4 text-gray-600"></div>
+                    <form id="holland-form">
+                        <table class="table table-bordered bg-white">
+                            <thead>
+                                <tr>
+                                    <th style="width:40%">Câu hỏi</th>
+                                    <th class="text-center">Rất không thích</th>
+                                    <th class="text-center">Không thích</th>
+                                    <th class="text-center">Bình thường</th>
+                                    <th class="text-center">Thích</th>
+                                    <th class="text-center">Rất thích</th>
+                                </tr>
+                            </thead>
+                            <tbody id="holland-questions-table">
+                                <!-- JS sẽ render từng dòng câu hỏi tại đây -->
+                            </tbody>
+                        </table>
+                        <div class="flex justify-between mt-4">
+                            <button type="button" id="holland-prev-btn" class="btn btn-secondary">Trở lại</button>
+                            <button type="button" id="holland-next-btn" class="btn btn-primary">Tiếp tục</button>
                         </div>
-                        <div class="w-full max-w-xs">
-                            <div class="progress-bar">
-                                <div id="progress-fill" class="progress-fill" style="width: 10%"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="question-container">
-                        <!-- hiện thị câu hỏi = js ở đây á hỉ chớ k phải k có code mô -->
-                    </div>
-
-                    <div class="flex justify-between mt-8">
-                        <button id="prev-btn"
-                            class="text-blue-600 hover:text-blue-800 font-medium flex items-center opacity-0">
-                            <i class="fas fa-arrow-left mr-2"></i> Câu trước
-                        </button>
-                        <button id="next-btn"
-                            class="bg-blue-600 text-white px-6 py-2 rounded-md font-medium hover:bg-blue-700 transition">
-                            Tiếp theo <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
-                    </div>
+                    </form>
                 </div>
 
                 <!-- kq bài test -->
@@ -243,21 +241,15 @@
                         </button>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
+        </article>
 
         <!-- tư vấn b3 -->
-        <div id="step-3" class="step-content">
+        <article id="step-3" class="step-content" role="tabpanel" aria-labelledby="step3-tab">
             <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <div class="consultant-card">
-                    <div class="flex items-center mb-6">
-                        <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                            <i class="fas fa-calendar-alt text-blue-600 text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800">Đặt Lịch Tư Vấn</h3>
-                    </div>
-
-                    <form id="consultation-form">
+                <section class="consultant-card">
+                    <h3 class="text-xl font-bold text-gray-800">Đặt Lịch Tư Vấn</h3>
+                    <form id="consultation-form" role="form">
                         <div class="mb-4">
                             <label for="name" class="block text-gray-700 font-medium mb-2">Họ và tên</label>
                             <input type="text" id="name"
@@ -309,17 +301,11 @@
                             class="w-full bg-blue-600 text-white py-3 rounded-md font-medium hover:bg-blue-700 transition">Đặt
                             Lịch Ngay</button>
                     </form>
-                </div>
+                </section>
 
-                <div class="consultant-card">
-                    <div class="flex items-center mb-6">
-                        <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mr-4">
-                            <i class="fas fa-comments text-purple-600 text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800">Chat với Chuyên Gia</h3>
-                    </div>
-
-                    <div class="bg-gray-50 rounded-lg p-4 mb-6">
+                <aside class="consultant-card">
+                    <h3 class="text-xl font-bold text-gray-800">Chat với Chuyên Gia</h3>
+                    <div class="chat-container">
                         <div class="flex items-start mb-4">
                             <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
                                 <i class="fas fa-robot text-blue-600"></i>
@@ -343,8 +329,7 @@
                             </button>
                         </div>
                     </div>
-
-                    <div class="border-t pt-6">
+                    <section class="schedule">
                         <h4 class="font-bold text-gray-800 mb-4">Lịch Tư Vấn Định Kỳ</h4>
                         <div class="space-y-3">
                             <div class="flex items-start p-3 bg-blue-50 rounded-lg">
@@ -373,14 +358,14 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </section>
+                </aside>
             </div>
-        </div>
+        </article>
 
-        <!-- so sánh ngành b4 (ch xong) -->
-        <div id="step-4" class="step-content">
-            <div class="max-w-4xl mx-auto bg-gray-50 p-6 rounded-xl shadow-sm mb-8">
+        <!-- so sánh ngành b4 -->
+        <article id="step-4" class="step-content" role="tabpanel" aria-labelledby="step4-tab">
+            <section class="max-w-4xl mx-auto bg-gray-50 p-6 rounded-xl shadow-sm mb-8">
                 <div class="grid md:grid-cols-2 gap-4 mb-6">
                     <div>
                         <label for="program1" class="block text-gray-700 font-medium mb-2">Ngành thứ nhất</label>
@@ -412,9 +397,9 @@
                 <button id="compare-btn"
                     class="bg-blue-600 text-white px-6 py-2 rounded-md font-medium hover:bg-blue-700 transition">So Sánh
                     Ngay</button>
-            </div>
+            </section>
 
-            <div id="comparison-result" class="hidden max-w-4xl mx-auto bg-white p-6 rounded-xl shadow-sm fade-in">
+            <section id="comparison-result" class="hidden max-w-4xl mx-auto bg-white p-6 rounded-xl shadow-sm fade-in" aria-live="polite">
                 <div class="flex justify-between items-center mb-6">
                     <h3 class="text-xl font-bold text-gray-800">Kết Quả So Sánh</h3>
                     <div class="flex space-x-2">
@@ -482,12 +467,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
+        </article>
 
         <!-- kq b5 -->
-        <div id="step-5" class="step-content">
-            <div class="card p-4 shadow">
+        <article id="step-5" class="step-content" role="tabpanel" aria-labelledby="step5-tab">
+            <section class="card p-4 shadow">
                 <h2 class="text-primary font-weight-bold mb-4">Kết Quả Định Hướng</h2>
                 <div id="final-results-container" class="grid md:grid-cols-3 gap-6">
                     <!-- kq lấy từ b2 hiển thị ở đây = js -->
@@ -511,12 +496,12 @@
                         <i class="fas fa-calendar-check mr-2"></i> Đặt Lịch Tư Vấn
                     </button>
                 </div>
-            </div>
-        </div>
+            </section>
+        </article>
 
         <!-- đánh giá b6 -->
-        <div id="step-6" class="step-content">
-            <div class="card p-4 shadow">
+        <article id="step-6" class="step-content" role="tabpanel" aria-labelledby="step6-tab">
+            <section class="card p-4 shadow">
                 <h2 class="text-primary font-weight-bold mb-4">Đánh Giá Trải Nghiệm</h2>
                 <p>Chúng tôi rất mong nhận được phản hồi của bạn để cải thiện chất lượng dịch vụ.</p>
 
@@ -559,11 +544,11 @@
                         <i class="fas fa-paper-plane mr-2"></i> Gửi Đánh Giá
                     </button>
                 </div>
-            </div>
-        </div>
-    </div>
+            </section>
+        </article>
+    </section>
     <!-- footer -->
-    <footer class="bg-dark text-white pt-5 pb-4">
+    <footer class="bg-dark text-white pt-5 pb-4" role="contentinfo">
         <div class="container">
           <div class="row g-5">
             <!-- VKU Info -->

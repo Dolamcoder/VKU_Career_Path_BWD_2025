@@ -497,7 +497,7 @@ header {
 }
 
 .test-container {
-    max-width: 800px;
+    max-width: 1400px;
     margin: 0 auto;
     background: white;
     border-radius: 10px;
@@ -507,7 +507,16 @@ header {
 .test-intro,
 .test-questions,
 .test-results {
-    padding: 30px;
+    padding: 48px;
+}
+
+.test-questions table {
+    width: 100%;
+}
+
+.test-questions th,
+.test-questions td {
+    padding: 18px;
 }
 
 .consultant-section {
@@ -659,4 +668,302 @@ footer .hover-opacity:hover {
     .introduce_content {
       width: 95%;
     }
+}
+
+/* Enhanced Responsive Styles */
+@media (max-width: 1024px) {
+  .test-container {
+    max-width: 95%;
+    margin: 0 auto;
+  }
+
+  .stepper-container {
+    padding: 0 15px;
+  }
+
+  .test-intro, 
+  .test-questions,
+  .test-results {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Typography */
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+  }
+
+  p, li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* Test Questions */
+  .test-questions {
+    padding: 15px;
+  }
+
+  .test-questions table {
+    min-width: 700px;
+    border-spacing: 1px;
+  }
+
+  .test-questions th {
+    white-space: normal;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .test-questions td {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  /* Form Elements */
+  input, select, textarea {
+    padding: 8px 12px;
+    margin-bottom: 15px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  label {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+  }
+
+  /* Buttons & Actions */
+  button {
+    min-height: 40px;
+    padding: 8px 16px;
+    font-size: 0.95rem;
+  }
+
+  .flex.justify-between {
+    gap: 15px;
+  }
+
+  /* Cards & Containers */
+  .card {
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+  .consultant-card {
+    padding: 20px 15px;
+  }
+
+  /* Chat Interface */
+  .chat-messages {
+    height: 280px;
+    padding: 10px;
+  }
+
+  .chat-message {
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+  }
+
+  #chat-input {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Container Spacing */
+  .container {
+    padding: 0 12px;
+  }
+
+  .test-container {
+    margin: 8px;
+    border-radius: 8px;
+  }
+
+  /* Typography */
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  p, li {
+    font-size: 0.9rem;
+  }
+
+  /* Form Layout */
+  .grid {
+    gap: 15px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  /* Interactive Elements */
+  .rating-stars {
+    gap: 8px;
+  }
+
+  .rating-stars i {
+    font-size: 22px;
+  }
+
+  /* Results Display */
+  .program-card {
+    padding: 12px;
+    margin-bottom: 15px;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+
+  /* Animations */
+  .fade-in {
+    animation-duration: 0.3s;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Container & Spacing */
+  .test-container {
+    margin: 5px;
+  }
+
+  .test-intro,
+  .test-questions,
+  .test-results {
+    padding: 15px 12px;
+  }
+
+  /* Typography */
+  h2 {
+    font-size: 1.35rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  p, li {
+    font-size: 0.85rem;
+  }
+
+  /* Form Elements */
+  input, select, textarea {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+
+  label {
+    font-size: 0.85rem;
+  }
+
+  /* Buttons */
+  button {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  /* Tables */
+  .test-questions table {
+    min-width: 600px;
+  }
+
+  .test-questions th,
+  .test-questions td {
+    padding: 8px;
+    font-size: 0.8rem;
+  }
+
+  /* Chat & Consultation */
+  .chat-messages {
+    height: 250px;
+  }
+
+  .chat-message {
+    padding: 8px;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+  }
+
+  /* Schedule Cards */
+  .space-y-3 > div {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+
+  .space-y-3 .text-sm {
+    font-size: 0.8rem;
+  }
+}
+
+/* Handle Landscape Mode */
+@media (max-height: 480px) and (orientation: landscape) {
+  .test-container {
+    margin: 5px auto;
+  }
+
+  .test-intro,
+  .test-questions,
+  .test-results {
+    padding: 12px;
+  }
+
+  .chat-messages {
+    height: 150px;
+  }
+
+  .stepper {
+    margin-bottom: 15px;
+  }
+
+  .grid {
+    gap: 10px;
+  }
+}
+
+/* High DPI Screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .test-container {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  input, select, textarea {
+    border-width: 0.5px;
+  }
+}
+
+@media (max-width: 900px) {
+  .test-questions {
+    overflow-x: auto !important;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+    display: block;
+  }
+  .test-questions table {
+    min-width: 650px;
+    width: max-content;
+    display: table;
+  }
 }
